@@ -30,20 +30,25 @@ public class Proyecto {
     private String descripcion;
     
     private String urlGithub;
+
+    private String urlPropia;
     
     
     // Constructores
     public Proyecto() {
     }
 
-    public Proyecto(long idProyecto, String nombreProy, Date fechaProy, String descripcion, String urlGithub) {
+
+    public Proyecto(long idProyecto, String nombreProy, Date fechaProy, String descripcion, String urlGithub,
+            String urlPropia) {
         this.idProyecto = idProyecto;
         this.nombreProy = nombreProy;
         this.fechaProy = fechaProy;
         this.descripcion = descripcion;
         this.urlGithub = urlGithub;
+        this.urlPropia = urlPropia;
     }
-    
+
     
     
 }

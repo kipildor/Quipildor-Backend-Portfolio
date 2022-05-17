@@ -1,5 +1,6 @@
 package com.quipildor.portfolio.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +16,8 @@ public class Estado {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int idEstado;
+    
+    @Column(nullable = false)
     private String descripcion;
     
     // Constructores

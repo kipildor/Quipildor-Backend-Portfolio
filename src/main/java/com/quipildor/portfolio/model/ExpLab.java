@@ -17,7 +17,7 @@ public class ExpLab {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long idParrafo;
+    private long idExp;
     
     private String nombreEmp;
     
@@ -36,14 +36,16 @@ public class ExpLab {
     public ExpLab() {
     }
 
-    public ExpLab(long idParrafo, String nombreEmp, Date fechaIng, Date fechaSalida, String descripcion, String urlLogo) {
-        this.idParrafo = idParrafo;
+    public ExpLab(long idExp, String nombreEmp, Date fechaIng, Date fechaSalida, String descripcion, String urlLogo) {
+        this.idExp = idExp;
         this.nombreEmp = nombreEmp;
         this.fechaIng = fechaIng;
         this.fechaSalida = fechaSalida;
         this.descripcion = descripcion;
         this.urlLogo = urlLogo;
     }
+
+    
     
     
     
