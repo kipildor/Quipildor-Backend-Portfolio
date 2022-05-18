@@ -10,6 +10,6 @@ public interface IEstadoService {
     public List<Estado> listarEstados();
 
     //Trae un estado que coincida con el ID
-    public Estado buscarEstado(Long id);
+    public Estado buscarEstado(Integer id);
     
 }
