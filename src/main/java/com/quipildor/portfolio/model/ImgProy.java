@@ -18,7 +18,7 @@ import lombok.Setter;
 public class ImgProy {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idImgProy;
     
     @Column(nullable = false)

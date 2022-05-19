@@ -19,7 +19,7 @@ import lombok.Setter;
 public class ExpLab {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idExp;
     
     private String nombreEmp;

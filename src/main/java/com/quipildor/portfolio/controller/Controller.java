@@ -1,5 +1,6 @@
-package com.quipildor.portfolio.controller;
 
+package com.quipildor.portfolio.controller;
+/*
 import com.quipildor.portfolio.model.Persona;
 import com.quipildor.portfolio.service.IPersonaService;
 import java.util.ArrayList;
@@ -13,12 +14,13 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+*/
 import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
 public class Controller {
-    
+/*    
     @Autowired
     private IPersonaService persoServ;
     
@@ -42,7 +44,7 @@ public class Controller {
     public void actualizarPersona (@RequestBody Persona pers) {
         persoServ.actualizarPersona(pers);
     }
-    
+  */  
     
 /*    
     List<Persona> listaPersonas = new ArrayList();
