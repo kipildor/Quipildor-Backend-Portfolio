@@ -20,5 +20,8 @@ public interface IPersonaService {
 
     //Actualiza los datos de una persona
     public void actualizarPersona(Persona persona);
+
+    //Comprueba si existe o no la persona
+    public boolean existePersonaId(Long id);
     
 }

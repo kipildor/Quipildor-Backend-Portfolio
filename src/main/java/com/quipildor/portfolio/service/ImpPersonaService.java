@@ -43,6 +43,11 @@ public class ImpPersonaService implements IPersonaService {
         ipersoRepo.save(persona);
         
     }
+
+    @Override
+    public boolean existePersonaId(Long id) {
+        return ipersoRepo.existsById(id);
+    }
     
     
 }
