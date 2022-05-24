@@ -1,7 +1,7 @@
 package com.quipildor.portfolio.dto;
 
 import java.util.Date;
-import java.sql.*;;
+import java.sql.*;
 
 import lombok.Getter;
 import lombok.Setter;
