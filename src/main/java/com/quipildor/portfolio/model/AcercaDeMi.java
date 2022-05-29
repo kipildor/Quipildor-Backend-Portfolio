@@ -39,6 +39,45 @@ public class AcercaDeMi {
         this.parrafo = parrafo;
         this.posicion = posicion;
     }
+
+    // Getters y Setters
+    public long getIdParrafo() {
+        return idParrafo;
+    }
+
+    public void setIdParrafo(long idParrafo) {
+        this.idParrafo = idParrafo;
+    }
+
+    public String getParrafo() {
+        return parrafo;
+    }
+
+    public void setParrafo(String parrafo) {
+        this.parrafo = parrafo;
+    }
+
+    public int getPosicion() {
+        return posicion;
+    }
+
+    public void setPosicion(int posicion) {
+        this.posicion = posicion;
+    }
+
+    public Persona getPerso() {
+        return perso;
+    }
+
+    public void setPerso(Persona perso) {
+        this.perso = perso;
+    }
+
+    @Override
+    public String toString() {
+        return "AcercaDeMi [idParrafo=" + idParrafo + ", parrafo=" + parrafo + ", perso=" + perso + ", posicion="
+                + posicion + "]";
+    }
     
         
     
