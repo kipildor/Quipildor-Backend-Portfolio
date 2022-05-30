@@ -20,6 +20,8 @@ public interface IAcercaDeMiService {
 
     //Actualiza el parrafo
     public void actualizarParrafo(AcercaDeMi parrafo);
-    
+
+    //Comprueba si existe o no el parrafo
+    public boolean existeParrafoId(Long id);
 
 }

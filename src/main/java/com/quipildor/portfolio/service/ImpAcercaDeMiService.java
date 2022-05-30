@@ -43,5 +43,11 @@ public class ImpAcercaDeMiService implements IAcercaDeMiService {
         iacercaRepo.save(parrafo);
         
     }
+
+    @Override
+    public boolean existeParrafoId(Long id) {
+        return iacercaRepo.existsById(id);
+    }
+
     
 }

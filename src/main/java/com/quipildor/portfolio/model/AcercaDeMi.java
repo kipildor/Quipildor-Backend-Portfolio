@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,6 +31,7 @@ public class AcercaDeMi {
     // Relaciones
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "persona_id")
+    @JsonProperty(access = Access.WRITE_ONLY)
     private Persona perso;
     
     // Constructores
@@ -39,7 +43,14 @@ public class AcercaDeMi {
         this.parrafo = parrafo;
         this.posicion = posicion;
     }
-
+/*
+    public AcercaDeMi(long idParrafo, String parrafo, int posicion, Persona perso) {
+        this.idParrafo = idParrafo;
+        this.parrafo = parrafo;
+        this.posicion = posicion;
+        this.perso = perso;
+    }
+*/
     // Getters y Setters
     public long getIdParrafo() {
         return idParrafo;

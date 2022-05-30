@@ -173,6 +173,20 @@ public class Persona {
     public void setActividadActual(String actividadActual) {
         this.actividadActual = actividadActual;
     }
+/*
+    public List<AcercaDeMi> getListaAcercaDeMi() {
+        return listaAcercaDeMi;
+    }
+
+    public void setListaAcercaDeMi(List<AcercaDeMi> listaAcercaDeMi) {
+        this.listaAcercaDeMi = listaAcercaDeMi;
+        
+        for(AcercaDeMi parrafo : listaAcercaDeMi){
+            parrafo.setPerso(this);
+        }
+        
+    }
+*/
     
         
 }
