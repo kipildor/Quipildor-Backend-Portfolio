@@ -14,6 +14,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -42,6 +46,7 @@ public class Proyecto {
     // Relaciones
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "persona_id")
+    @JsonProperty(access = Access.WRITE_ONLY)
     private Persona perso;
     
     @OneToMany(mappedBy = "proy", cascade = CascadeType.ALL)

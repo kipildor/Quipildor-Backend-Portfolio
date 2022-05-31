@@ -33,7 +33,7 @@ public class ImpHabilidadService implements IHabilidadService {
     }
 
     @Override
-    public Habilidad buscarHabilidad(Long id) {
+    public Habilidad buscarHabilidadId(Long id) {
         Habilidad habilidad = ihabilidadRepo.findById(id).orElse(null);
         return habilidad;
     }
@@ -42,6 +42,11 @@ public class ImpHabilidadService implements IHabilidadService {
     public void actualizarHabilidad(Habilidad habilidad) {
         ihabilidadRepo.save(habilidad);
         
+    }
+
+    @Override
+    public boolean existeHabilidad(Long id) {
+        return ihabilidadRepo.existsById(id);
     }
     
 }

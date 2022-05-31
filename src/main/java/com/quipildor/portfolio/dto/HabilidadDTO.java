@@ -1,60 +1,34 @@
-package com.quipildor.portfolio.model;
+package com.quipildor.portfolio.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import com.quipildor.portfolio.model.Persona;
 
 import lombok.Getter;
 import lombok.Setter;
 
-
-@Entity
 @Getter @Setter
-public class Habilidad {
+public class HabilidadDTO {
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idHabilidad;
     
     private String tecnologia;
     
     private int porcentaje;
+
     private int posicion;
 
     // Relaciones
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "persona_id")
-    @JsonProperty(access = Access.WRITE_ONLY)
     private Persona perso;
-    
-    
-    // Constructores
-    public Habilidad() {
-    }
 
-    public Habilidad(long idHabilidad, String tecnologia, int porcentaje, int posicion, Persona perso) {
+    //Constructor
+    public HabilidadDTO(long idHabilidad, String tecnologia, int porcentaje, int posicion, Persona perso) {
         this.idHabilidad = idHabilidad;
         this.tecnologia = tecnologia;
         this.porcentaje = porcentaje;
         this.posicion = posicion;
         this.perso = perso;
     }
-/*
-    public Habilidad(long idHabilidad, String tecnologia, int porcentaje, int posicion) {
-        this.idHabilidad = idHabilidad;
-        this.tecnologia = tecnologia;
-        this.porcentaje = porcentaje;
-        this.posicion = posicion;
-    }
-*/
-    // Getters y Setters
+
+    //Getters y Setters
     public long getIdHabilidad() {
         return idHabilidad;
     }
@@ -98,12 +72,12 @@ public class Habilidad {
     //Método ToString
     @Override
     public String toString() {
-        return "Habilidad [idHabilidad=" + idHabilidad + ", perso=" + perso + ", porcentaje=" + porcentaje
+        return "HabilidadDTO [idHabilidad=" + idHabilidad + ", perso=" + perso + ", porcentaje=" + porcentaje
                 + ", posicion=" + posicion + ", tecnologia=" + tecnologia + "]";
     }
+
     
-    
-    
-    
-    
+
+
+
 }

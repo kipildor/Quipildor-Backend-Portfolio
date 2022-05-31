@@ -11,6 +11,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -37,6 +41,7 @@ public class ExpLab {
 
     // Relaciones
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonProperty(access = Access.WRITE_ONLY)
     @JoinColumn(name = "persona_id")
     private Persona perso;
 

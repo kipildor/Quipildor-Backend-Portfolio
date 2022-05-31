@@ -84,6 +84,7 @@ public class AcercaDeMi {
         this.perso = perso;
     }
 
+    //Método ToString
     @Override
     public String toString() {
         return "AcercaDeMi [idParrafo=" + idParrafo + ", parrafo=" + parrafo + ", perso=" + perso + ", posicion="

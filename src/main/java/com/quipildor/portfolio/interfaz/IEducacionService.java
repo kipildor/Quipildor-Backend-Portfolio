@@ -20,6 +20,9 @@ public interface IEducacionService {
 
     //Actualiza registro educativo
     public void actualizarEducacion(Educacion educacion);
+
+    //Comprobar si existe la educación
+    public boolean existeEducacion(Long id);
     
     
 }

@@ -16,9 +16,12 @@ public interface IHabilidadService {
     public void borrarHabilidad(Long id);
 
     //Trae la habilidad que coincida con el ID
-    public Habilidad buscarHabilidad(Long id);
+    public Habilidad buscarHabilidadId(Long id);
 
     //Actualiza la habilidad que coincida con el ID
     public void actualizarHabilidad(Habilidad habilidad);
+
+    //Comprobar si existe la habilidad
+    public boolean existeHabilidad(Long id);
     
 }

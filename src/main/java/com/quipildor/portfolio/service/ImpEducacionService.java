@@ -44,5 +44,10 @@ public class ImpEducacionService implements IEducacionService {
         
     }
 
+    @Override
+    public boolean existeEducacion(Long id) {
+        return ieducRepo.existsById(id);
+    }
+
     
 }
