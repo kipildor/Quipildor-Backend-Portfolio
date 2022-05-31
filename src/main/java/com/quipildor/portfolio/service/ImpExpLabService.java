@@ -43,5 +43,10 @@ public class ImpExpLabService implements IExpLabService {
         iexpLabRepo.save(empleo);
         
     }
+
+    @Override
+    public boolean existeExpLab(Long id) {
+        return iexpLabRepo.existsById(id);
+    }
     
 }

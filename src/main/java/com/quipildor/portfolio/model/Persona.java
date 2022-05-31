@@ -187,6 +187,17 @@ public class Persona {
         
     }
 */
+
+    //Método ToString
+    @Override
+    public String toString() {
+        return "Persona [actividadActual=" + actividadActual + ", apellido=" + apellido + ", email=" + email
+                + ", fechaNac=" + fechaNac + ", id=" + id + ", listaAcercaDeMi=" + listaAcercaDeMi + ", listaEducacion="
+                + listaEducacion + ", listaExpLab=" + listaExpLab + ", listaHabilidades=" + listaHabilidades
+                + ", listaProyectos=" + listaProyectos + ", nombre=" + nombre + ", password=" + password
+                + ", titProfesional=" + titProfesional + ", ubicacion=" + ubicacion + ", urlBanner=" + urlBanner
+                + ", urlFoto=" + urlFoto + "]";
+    }
     
         
 }

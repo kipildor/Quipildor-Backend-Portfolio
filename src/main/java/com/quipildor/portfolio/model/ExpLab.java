@@ -53,6 +53,70 @@ public class ExpLab {
         this.urlLogo = urlLogo;
     }
 
+    //Getters y Setters
+    public long getIdExp() {
+        return idExp;
+    }
+
+    public void setIdExp(long idExp) {
+        this.idExp = idExp;
+    }
+
+    public String getNombreEmp() {
+        return nombreEmp;
+    }
+
+    public void setNombreEmp(String nombreEmp) {
+        this.nombreEmp = nombreEmp;
+    }
+
+    public Date getFechaIng() {
+        return fechaIng;
+    }
+
+    public void setFechaIng(Date fechaIng) {
+        this.fechaIng = fechaIng;
+    }
+
+    public Date getFechaSalida() {
+        return fechaSalida;
+    }
+
+    public void setFechaSalida(Date fechaSalida) {
+        this.fechaSalida = fechaSalida;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getUrlLogo() {
+        return urlLogo;
+    }
+
+    public void setUrlLogo(String urlLogo) {
+        this.urlLogo = urlLogo;
+    }
+
+    public Persona getPerso() {
+        return perso;
+    }
+
+    public void setPerso(Persona perso) {
+        this.perso = perso;
+    }
+
+    //Método ToString
+    @Override
+    public String toString() {
+        return "ExpLab [descripcion=" + descripcion + ", fechaIng=" + fechaIng + ", fechaSalida=" + fechaSalida
+                + ", idExp=" + idExp + ", nombreEmp=" + nombreEmp + ", perso=" + perso + ", urlLogo=" + urlLogo + "]";
+    }
+
     
     
     

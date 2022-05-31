@@ -20,4 +20,9 @@ public interface IExpLabService {
 
     //Actualiza un registro de experiencia laboral
     public void actualizarExpLab(ExpLab trabajo);
+
+    //Pregunta que la experiencia laboral que coincide con el ID existe o no
+    public boolean existeExpLab(Long id);
+
+
 }
