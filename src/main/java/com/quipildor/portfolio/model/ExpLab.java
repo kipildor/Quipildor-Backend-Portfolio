@@ -49,6 +49,17 @@ public class ExpLab {
     public ExpLab() {
     }
 
+    public ExpLab(long idExp, String nombreEmp, Date fechaIng, Date fechaSalida, String descripcion, String urlLogo,
+            Persona perso) {
+        this.idExp = idExp;
+        this.nombreEmp = nombreEmp;
+        this.fechaIng = fechaIng;
+        this.fechaSalida = fechaSalida;
+        this.descripcion = descripcion;
+        this.urlLogo = urlLogo;
+        this.perso = perso;
+    }
+/*
     public ExpLab(long idExp, String nombreEmp, Date fechaIng, Date fechaSalida, String descripcion, String urlLogo) {
         this.idExp = idExp;
         this.nombreEmp = nombreEmp;
@@ -57,7 +68,7 @@ public class ExpLab {
         this.descripcion = descripcion;
         this.urlLogo = urlLogo;
     }
-
+*/
     //Getters y Setters
     public long getIdExp() {
         return idExp;

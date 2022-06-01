@@ -37,20 +37,20 @@ public class AcercaDeMi {
     // Constructores
     public AcercaDeMi() {
     }
-
+/*
     public AcercaDeMi(long idParrafo, String parrafo, int posicion) {
         this.idParrafo = idParrafo;
         this.parrafo = parrafo;
         this.posicion = posicion;
     }
-/*
+*/
     public AcercaDeMi(long idParrafo, String parrafo, int posicion, Persona perso) {
         this.idParrafo = idParrafo;
         this.parrafo = parrafo;
         this.posicion = posicion;
         this.perso = perso;
     }
-*/
+
     // Getters y Setters
     public long getIdParrafo() {
         return idParrafo;

@@ -57,6 +57,18 @@ public class Educacion {
     public Educacion() {
     }
 
+    public Educacion(long idEduc, String nombreInstit, Date fechaInicio, Date fechaFin, String titulo, String urlLogo,
+            Persona perso, Estado estado) {
+        this.idEduc = idEduc;
+        this.nombreInstit = nombreInstit;
+        this.fechaInicio = fechaInicio;
+        this.fechaFin = fechaFin;
+        this.titulo = titulo;
+        this.urlLogo = urlLogo;
+        this.perso = perso;
+        this.estado = estado;
+    }
+/*
     public Educacion(long idEduc, String nombreInstit, Date fechaInicio, Date fechaFin, String titulo, String urlLogo) {
         this.idEduc = idEduc;
         this.nombreInstit = nombreInstit;
@@ -65,7 +77,7 @@ public class Educacion {
         this.titulo = titulo;
         this.urlLogo = urlLogo;
     }
-
+*/
     // Getters y Setters
     public long getIdEduc() {
         return idEduc;

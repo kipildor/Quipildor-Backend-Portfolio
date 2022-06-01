@@ -37,10 +37,48 @@ public class ImgProy {
     public ImgProy() {
     }
 
+    public ImgProy(long idImgProy, String urlImg, Proyecto proy) {
+        this.idImgProy = idImgProy;
+        this.urlImg = urlImg;
+        this.proy = proy;
+    }
+/*
     public ImgProy(long idImgProy, String urlImg) {
         this.idImgProy = idImgProy;
         this.urlImg = urlImg;
     }
-    
+*/
+
+    // Getters y Setters
+    public long getIdImgProy() {
+        return idImgProy;
+    }
+
+    public void setIdImgProy(long idImgProy) {
+        this.idImgProy = idImgProy;
+    }
+
+    public String getUrlImg() {
+        return urlImg;
+    }
+
+    public void setUrlImg(String urlImg) {
+        this.urlImg = urlImg;
+    }
+
+    public Proyecto getProy() {
+        return proy;
+    }
+
+    public void setProy(Proyecto proy) {
+        this.proy = proy;
+    }
+
+    //Método ToString
+    @Override
+    public String toString() {
+        return "ImgProy [idImgProy=" + idImgProy + ", proy=" + proy + ", urlImg=" + urlImg + "]";
+    }  
+
     
 }
