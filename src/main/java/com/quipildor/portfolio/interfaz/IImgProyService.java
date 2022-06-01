@@ -20,5 +20,8 @@ public interface IImgProyService {
 
     //Actualiza el registro de una imagen
     public void actualizarImagenProy(ImgProy imagen);
+
+    //Comprueba si existe la imagen
+    public boolean existeImagenProy(Long id);
     
 }

@@ -43,5 +43,10 @@ public class ImpProyectoService implements IProyectoService {
         iproyectoRepo.save(proyecto);
         
     }
+
+    @Override
+    public boolean existeProyecto(Long id) {
+        return iproyectoRepo.existsById(id);
+    }
     
 }

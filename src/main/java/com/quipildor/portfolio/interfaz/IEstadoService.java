@@ -11,5 +11,8 @@ public interface IEstadoService {
 
     //Trae un estado que coincida con el ID
     public Estado buscarEstado(Integer id);
+
+    //Comprueba que exista el estado
+    public boolean existeEstado(int id);
     
 }

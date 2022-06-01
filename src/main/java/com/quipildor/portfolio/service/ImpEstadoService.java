@@ -25,5 +25,10 @@ public class ImpEstadoService implements IEstadoService {
         Estado estado = iestadoRepo.findById(id).orElse(null);
         return estado;
     }
+
+    @Override
+    public boolean existeEstado(int id) {
+        return iestadoRepo.existsById(id);
+    }
     
 }

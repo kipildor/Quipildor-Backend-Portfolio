@@ -37,6 +37,29 @@ public class Estado {
         this.idEstado = idEstado;
         this.descripcion = descripcion;
     }
+
+    // Getters y Setters
+    public int getIdEstado() {
+        return idEstado;
+    }
+
+    public void setIdEstado(int idEstado) {
+        this.idEstado = idEstado;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    //Método ToString
+    @Override
+    public String toString() {
+        return "Estado [descripcion=" + descripcion + ", idEstado=" + idEstado + "]";
+    }
     
     
     

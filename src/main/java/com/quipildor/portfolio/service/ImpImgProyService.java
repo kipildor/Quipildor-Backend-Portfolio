@@ -43,5 +43,10 @@ public class ImpImgProyService implements IImgProyService {
         iimgProyRepo.save(imagen);
         
     }
+
+    @Override
+    public boolean existeImagenProy(Long id) {
+        return iimgProyRepo.existsById(id);
+    }
     
 }

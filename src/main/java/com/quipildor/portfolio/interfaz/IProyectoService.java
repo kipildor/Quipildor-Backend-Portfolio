@@ -20,6 +20,9 @@ public interface IProyectoService {
 
     //Actualiza un proyecto
     public void actualizarProyecto(Proyecto proyecto);
+
+    //Comprueba si existe el proyecto
+    public boolean existeProyecto(Long id);
     
     
 }
