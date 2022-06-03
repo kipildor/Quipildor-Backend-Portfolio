@@ -15,9 +15,9 @@ public class EducacionDTO {
     
     private String nombreInstit;
     
-    private Date fechaInicio;
+    private int fechaInicio;
     
-    private Date fechaFin;
+    private int fechaFin;
     
     private String titulo;
     
@@ -29,7 +29,7 @@ public class EducacionDTO {
     private Estado estado;
 
     //Constructores
-    public EducacionDTO(long idEduc, String nombreInstit, Date fechaInicio, Date fechaFin, String titulo,
+    public EducacionDTO(long idEduc, String nombreInstit, int fechaInicio, int fechaFin, String titulo,
             String urlLogo, Persona perso, Estado estado) {
         this.idEduc = idEduc;
         this.nombreInstit = nombreInstit;
@@ -58,19 +58,19 @@ public class EducacionDTO {
         this.nombreInstit = nombreInstit;
     }
 
-    public Date getFechaInicio() {
+    public int getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(Date fechaInicio) {
+    public void setFechaInicio(int fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
-    public Date getFechaFin() {
+    public int getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Date fechaFin) {
+    public void setFechaFin(int fechaFin) {
         this.fechaFin = fechaFin;
     }
 

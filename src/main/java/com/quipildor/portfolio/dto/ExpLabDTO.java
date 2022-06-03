@@ -14,15 +14,15 @@ public class ExpLabDTO {
     
     private String nombreEmp;
     
-    private Date fechaIng;
+    private int fechaIng;
     
-    private Date fechaSalida;
+    private int fechaSalida;
     
     // Relaciones
     private Persona perso;
 
     //Constructores
-    public ExpLabDTO(long idExp, String nombreEmp, Date fechaIng, Date fechaSalida, Persona perso) {
+    public ExpLabDTO(long idExp, String nombreEmp, int fechaIng, int fechaSalida, Persona perso) {
         this.idExp = idExp;
         this.nombreEmp = nombreEmp;
         this.fechaIng = fechaIng;
@@ -47,19 +47,19 @@ public class ExpLabDTO {
         this.nombreEmp = nombreEmp;
     }
 
-    public Date getFechaIng() {
+    public int getFechaIng() {
         return fechaIng;
     }
 
-    public void setFechaIng(Date fechaIng) {
+    public void setFechaIng(int fechaIng) {
         this.fechaIng = fechaIng;
     }
 
-    public Date getFechaSalida() {
+    public int getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(Date fechaSalida) {
+    public void setFechaSalida(int fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 

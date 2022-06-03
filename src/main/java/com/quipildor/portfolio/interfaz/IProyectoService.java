@@ -1,6 +1,6 @@
 package com.quipildor.portfolio.interfaz;
 
-import java.util.List;
+import java.util.*;
 
 import com.quipildor.portfolio.model.Proyecto;
 

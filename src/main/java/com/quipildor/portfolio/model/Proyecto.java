@@ -33,9 +33,8 @@ public class Proyecto {
     @Column(nullable = false)
     private String nombreProy;
     
-    @Temporal(TemporalType.DATE)
     @Column(nullable = true)
-    private Date fechaProy;
+    private int fechaProy;
     
     private String descripcion;
     
@@ -68,7 +67,7 @@ public class Proyecto {
         this.urlPropia = urlPropia;
     }
 */
-    public Proyecto(long idProyecto, String nombreProy, Date fechaProy, String descripcion, String urlGithub,
+    public Proyecto(long idProyecto, String nombreProy, int fechaProy, String descripcion, String urlGithub,
             String urlPropia, Persona perso) {
         this.idProyecto = idProyecto;
         this.nombreProy = nombreProy;
@@ -96,11 +95,11 @@ public class Proyecto {
         this.nombreProy = nombreProy;
     }
 
-    public Date getFechaProy() {
+    public int getFechaProy() {
         return fechaProy;
     }
 
-    public void setFechaProy(Date fechaProy) {
+    public void setFechaProy(int fechaProy) {
         this.fechaProy = fechaProy;
     }
 

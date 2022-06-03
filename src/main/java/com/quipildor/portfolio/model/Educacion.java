@@ -30,11 +30,11 @@ public class Educacion {
     @Column(nullable = false)
     private String nombreInstit;
     
-    @Temporal(TemporalType.DATE)
-    private Date fechaInicio;
+    @Column(nullable = false)
+    private int fechaInicio;
     
-    @Temporal(TemporalType.DATE)
-    private Date fechaFin;
+    @Column(nullable = true)
+    private int fechaFin;
     
     @Column(nullable = false)
     private String titulo;
@@ -48,16 +48,17 @@ public class Educacion {
     @JsonProperty(access = Access.WRITE_ONLY)
     private Persona perso;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    //@ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "estado_id")
-    @JsonProperty(access = Access.WRITE_ONLY)
+    //@JsonProperty(access = Access.WRITE_ONLY)
     private Estado estado;
     
     // Constructores
     public Educacion() {
     }
 
-    public Educacion(long idEduc, String nombreInstit, Date fechaInicio, Date fechaFin, String titulo, String urlLogo,
+    public Educacion(long idEduc, String nombreInstit, int fechaInicio, int fechaFin, String titulo, String urlLogo,
             Persona perso, Estado estado) {
         this.idEduc = idEduc;
         this.nombreInstit = nombreInstit;
@@ -95,19 +96,19 @@ public class Educacion {
         this.nombreInstit = nombreInstit;
     }
 
-    public Date getFechaInicio() {
+    public int getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(Date fechaInicio) {
+    public void setFechaInicio(int fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
-    public Date getFechaFin() {
+    public int getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Date fechaFin) {
+    public void setFechaFin(int fechaFin) {
         this.fechaFin = fechaFin;
     }
 

@@ -28,11 +28,11 @@ public class ExpLab {
     
     private String nombreEmp;
     
-    @Temporal(TemporalType.DATE)
-    private Date fechaIng;
+    @Column(nullable = false)
+    private int fechaIng;
     
-    @Temporal(TemporalType.DATE)
-    private Date fechaSalida;
+    @Column(nullable = true)
+    private int fechaSalida;
     
     @Column(length = 250)
     private String descripcion;
@@ -49,7 +49,7 @@ public class ExpLab {
     public ExpLab() {
     }
 
-    public ExpLab(long idExp, String nombreEmp, Date fechaIng, Date fechaSalida, String descripcion, String urlLogo,
+    public ExpLab(long idExp, String nombreEmp, int fechaIng, int fechaSalida, String descripcion, String urlLogo,
             Persona perso) {
         this.idExp = idExp;
         this.nombreEmp = nombreEmp;
@@ -86,19 +86,19 @@ public class ExpLab {
         this.nombreEmp = nombreEmp;
     }
 
-    public Date getFechaIng() {
+    public int getFechaIng() {
         return fechaIng;
     }
 
-    public void setFechaIng(Date fechaIng) {
+    public void setFechaIng(int fechaIng) {
         this.fechaIng = fechaIng;
     }
 
-    public Date getFechaSalida() {
+    public int getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(Date fechaSalida) {
+    public void setFechaSalida(int fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
