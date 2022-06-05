@@ -42,6 +42,9 @@ public class Proyecto {
 
     private String urlPropia;
 
+    @Column(nullable = true)
+    private String tecnologia;
+
     // Relaciones
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "persona_id")
@@ -68,13 +71,14 @@ public class Proyecto {
     }
 */
     public Proyecto(long idProyecto, String nombreProy, int fechaProy, String descripcion, String urlGithub,
-            String urlPropia, Persona perso) {
+            String urlPropia, String tecnologia, Persona perso) {
         this.idProyecto = idProyecto;
         this.nombreProy = nombreProy;
         this.fechaProy = fechaProy;
         this.descripcion = descripcion;
         this.urlGithub = urlGithub;
         this.urlPropia = urlPropia;
+        this.tecnologia = tecnologia;
         this.perso = perso;
     }
 
@@ -127,6 +131,14 @@ public class Proyecto {
         this.urlPropia = urlPropia;
     }
 
+    public String getTecnologia() {
+        return tecnologia;
+    }
+
+    public void setTecnologia(String tecnologia) {
+        this.tecnologia = tecnologia;
+    }
+
     public Persona getPerso() {
         return perso;
     }
@@ -139,10 +151,9 @@ public class Proyecto {
     @Override
     public String toString() {
         return "Proyecto [descripcion=" + descripcion + ", fechaProy=" + fechaProy + ", idProyecto=" + idProyecto
-                + ", nombreProy=" + nombreProy + ", perso=" + perso + ", urlGithub=" + urlGithub + ", urlPropia="
-                + urlPropia + "]";
+                + ", listaImagenes=" + listaImagenes + ", nombreProy=" + nombreProy + ", perso=" + perso
+                + ", tecnologia=" + tecnologia + ", urlGithub=" + urlGithub + ", urlPropia=" + urlPropia + "]";
     }
 
-    
-    
+        
 }

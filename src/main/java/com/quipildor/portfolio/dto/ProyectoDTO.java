@@ -22,18 +22,21 @@ public class ProyectoDTO {
 
     private String urlPropia;
 
+    private String tecnologia;
+
     // Relaciones
     private Persona perso;
 
     //Constructores
     public ProyectoDTO(long idProyecto, String nombreProy, int fechaProy, String descripcion, String urlGithub,
-            String urlPropia, Persona perso) {
+            String urlPropia, String tecnologia, Persona perso) {
         this.idProyecto = idProyecto;
         this.nombreProy = nombreProy;
         this.fechaProy = fechaProy;
         this.descripcion = descripcion;
         this.urlGithub = urlGithub;
         this.urlPropia = urlPropia;
+        this.tecnologia = tecnologia;
         this.perso = perso;
     }
 
@@ -86,6 +89,14 @@ public class ProyectoDTO {
         this.urlPropia = urlPropia;
     }
 
+    public String getTecnologia() {
+        return tecnologia;
+    }
+
+    public void setTecnologia(String tecnologia) {
+        this.tecnologia = tecnologia;
+    }
+
     public Persona getPerso() {
         return perso;
     }
@@ -98,10 +109,8 @@ public class ProyectoDTO {
     @Override
     public String toString() {
         return "ProyectoDTO [descripcion=" + descripcion + ", fechaProy=" + fechaProy + ", idProyecto=" + idProyecto
-                + ", nombreProy=" + nombreProy + ", perso=" + perso + ", urlGithub=" + urlGithub + ", urlPropia="
-                + urlPropia + "]";
+                + ", nombreProy=" + nombreProy + ", perso=" + perso + ", tecnologia=" + tecnologia + ", urlGithub="
+                + urlGithub + ", urlPropia=" + urlPropia + "]";
     }
-
-    
     
 }
