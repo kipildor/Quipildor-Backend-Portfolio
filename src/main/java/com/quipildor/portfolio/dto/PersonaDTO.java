@@ -1,13 +1,17 @@
 package com.quipildor.portfolio.dto;
 
 import java.util.Date;
+
+import com.quipildor.portfolio.model.Persona;
+
+import java.io.Serializable;
 import java.sql.*;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class PersonaDTO {
+public class PersonaDTO implements Serializable {
 
     private long id;
     
@@ -32,6 +36,7 @@ public class PersonaDTO {
     private String actividadActual;
 
     //Constructores
+    
     public PersonaDTO(long id, String nombre, String apellido, Date fechaNac, String email, 
                     String urlFoto, String urlBanner, String password, String ubicacion, String titProfesional, 
                     String actividadActual) {
@@ -46,6 +51,23 @@ public class PersonaDTO {
         this.ubicacion = ubicacion;
         this.titProfesional = titProfesional;
         this.actividadActual = actividadActual;
+    }
+
+    public PersonaDTO() {
+    }
+
+    public PersonaDTO(Persona perso) {
+        this.id = perso.getId();
+        this.nombre = perso.getNombre();
+        this.apellido = perso.getApellido();
+        this.fechaNac = perso.getFechaNac();
+        this.email = perso.getEmail();
+        this.urlFoto = perso.getUrlFoto();
+        this.urlBanner = perso.getUrlBanner();
+        this.password = perso.getPassword();
+        this.ubicacion = perso.getUbicacion();
+        this.titProfesional = perso.getTitProfesional();
+        this.actividadActual = perso.getActividadActual();
     }
 
     //Getters y Setters

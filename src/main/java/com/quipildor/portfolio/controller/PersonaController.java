@@ -63,9 +63,10 @@ public class PersonaController {
         return new ResponseEntity<Mensaje>(new Mensaje("El usuario fue borrado."), HttpStatus.OK);
     }
 
-    @PutMapping ("editar/persona/{id}")
+    @PutMapping ("editar/{id}")
     public ResponseEntity<?> modificarPersona(@PathVariable Long id, @RequestBody PersonaDTO persoDto){
         if(!ipersonaServ.existePersonaId(id)){
+            
             return new ResponseEntity<Mensaje>(new Mensaje("El Id No Existe"), HttpStatus.NOT_FOUND);
         }
         Persona perso = ipersonaServ.buscarPersonaPorID(id);
@@ -80,6 +81,30 @@ public class PersonaController {
         perso.setUbicacion(persoDto.getUbicacion());
         perso.setTitProfesional(persoDto.getTitProfesional());
         perso.setActividadActual(persoDto.getActividadActual());
+
+        ipersonaServ.crearPersona(perso);
+
+        return new ResponseEntity<Mensaje>(new Mensaje("Usuario actualizado."), HttpStatus.OK);
+    }
+
+    @PutMapping ("editardirecto/{id}")
+    public ResponseEntity<?> modificarPersonaDirecto(@PathVariable Long id, @RequestBody Persona person){
+        if(!ipersonaServ.existePersonaId(id)){
+            
+            return new ResponseEntity<Mensaje>(new Mensaje("El Id No Existe"), HttpStatus.NOT_FOUND);
+        }
+        Persona perso = ipersonaServ.buscarPersonaPorID(id);
+
+        perso.setNombre(person.getNombre());
+        perso.setApellido(person.getApellido());
+        perso.setFechaNac(person.getFechaNac());
+        perso.setEmail(person.getEmail());
+        perso.setUrlFoto(person.getUrlFoto());
+        perso.setUrlBanner(person.getUrlBanner());
+        perso.setPassword(person.getPassword());
+        perso.setUbicacion(person.getUbicacion());
+        perso.setTitProfesional(person.getTitProfesional());
+        perso.setActividadActual(person.getActividadActual());
 
         ipersonaServ.crearPersona(perso);
 
