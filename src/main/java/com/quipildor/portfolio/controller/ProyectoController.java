@@ -22,7 +22,7 @@ public class ProyectoController {
 
     @Autowired IProyectoService iproyServ;
 
-    @GetMapping ("")
+    @GetMapping ("/invitado")
     public ResponseEntity<List<Proyecto>> listarProy() {
 
         List<Proyecto> listaProyectos = iproyServ.listarProyectos();

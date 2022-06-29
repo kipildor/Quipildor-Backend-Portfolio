@@ -22,7 +22,7 @@ public class EducacionController {
 
     @Autowired IEducacionService ieducServ;
 
-    @GetMapping ("")
+    @GetMapping ("/invitado")
     public ResponseEntity<List<Educacion>> listarEduc() {
 
         List<Educacion> listaEduc = ieducServ.listarEducacion();

@@ -23,7 +23,7 @@ public class HabilidadController {
 
     @Autowired IHabilidadService ihabilidadServ;
 
-    @GetMapping("")
+    @GetMapping("/invitado")
     public ResponseEntity<List<Habilidad>> obtenerHabilidades() {
         List<Habilidad> listaHabilidades = ihabilidadServ.listarHabilidades();
         return new ResponseEntity<List<Habilidad>>(listaHabilidades, HttpStatus.OK);

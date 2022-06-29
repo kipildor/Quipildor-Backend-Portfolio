@@ -22,7 +22,7 @@ public class AcercaDeController {
     
     @Autowired IAcercaDeMiService iacercaServ;
 
-    @GetMapping ("")
+    @GetMapping ("/invitado")
     public ResponseEntity<List<AcercaDeMi>> listarAcerca() {
 
         List<AcercaDeMi> listaAcerca = iacercaServ.listarParrafos();

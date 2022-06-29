@@ -22,7 +22,7 @@ public class ExpLabController {
 
     @Autowired IExpLabService iexp;
 
-    @GetMapping("")
+    @GetMapping("/invitado")
     public ResponseEntity<List<ExpLab>> listarExperiencias() {
 
         List<ExpLab> listaExp = iexp.listarExpLab();

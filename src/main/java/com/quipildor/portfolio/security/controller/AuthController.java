@@ -27,8 +27,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 @RestController
+@CrossOrigin(origins = "*")//resuelve algunos problemas de Heroku
 @RequestMapping("/auth")
-@CrossOrigin
+//@CrossOrigin
 public class AuthController {
 
     @Autowired

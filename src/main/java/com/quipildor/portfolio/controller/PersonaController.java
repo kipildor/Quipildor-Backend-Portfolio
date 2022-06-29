@@ -35,7 +35,7 @@ public class PersonaController {
         return new ResponseEntity<List<Persona>>(lista, HttpStatus.OK);
     }
 
-    @GetMapping ("traer/persona/{id}")
+    @GetMapping ("invitado/traer-persona/{id}")
     public ResponseEntity<?> buscarPersona(@PathVariable Long id) {
         if(!ipersonaServ.existePersonaId(id)){
             return new ResponseEntity<Mensaje>(new Mensaje("Id No Existe"), HttpStatus.NOT_FOUND);
