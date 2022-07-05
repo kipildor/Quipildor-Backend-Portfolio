@@ -2,6 +2,7 @@ package com.quipildor.portfolio.controller;
 
 import java.util.List;
 
+import com.quipildor.portfolio.dto.ImgProyDTO;
 import com.quipildor.portfolio.dto.Mensaje;
 import com.quipildor.portfolio.interfaz.IImgProyService;
 import com.quipildor.portfolio.model.ImgProy;
@@ -10,8 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -24,20 +29,50 @@ public class ImgProyController {
 
     @GetMapping ("")
     public ResponseEntity<List<ImgProy>> listarImagenesProyecto() {
-
         List<ImgProy> listaImagenes = iimgServ.listarImagenesProy();
         return new ResponseEntity<List<ImgProy>>(listaImagenes, HttpStatus.OK);
-        
     }
 
-    @GetMapping ("/{id}")
-    public ResponseEntity<?> buscarImagen(@PathVariable Long id) {
+    @GetMapping ("/invitado/{id}")
+    public ResponseEntity<?> buscarImagenProy(@PathVariable Long id) {
         if(!iimgServ.existeImagenProy(id)){
             return new ResponseEntity<Mensaje>(new Mensaje("Id No Existe"), HttpStatus.NOT_FOUND);
         }
         ImgProy imagen = iimgServ.buscarImagenProy(id);
         return new ResponseEntity<ImgProy>(imagen, HttpStatus.OK);
-        
+    }
+
+    @PostMapping ("/crear")
+    public ResponseEntity<?> altaImagenProy(@RequestBody ImgProyDTO imgProyDto){
+        ImgProy imagen = new ImgProy(imgProyDto.getIdImgProy(), imgProyDto.getUrlImg(),
+                                imgProyDto.getProy());
+        iimgServ.crearImagenProy(imagen);
+        return new ResponseEntity<Mensaje>(new Mensaje("La imagen fue subida."), HttpStatus.OK);
+    }
+
+    @DeleteMapping ("/borrar/{id}")
+    public ResponseEntity<?> borrarImagenProy(@PathVariable Long id){
+        if(!iimgServ.existeImagenProy(id)){
+            return new ResponseEntity<Mensaje>(new Mensaje("El Id No Existe"), HttpStatus.NOT_FOUND);
+        }
+        iimgServ.borrarImagenProy(id);
+        return new ResponseEntity<Mensaje>(new Mensaje("La imagen fue borrada."), HttpStatus.OK);
+    }
+
+    @PutMapping ("/editar/{id}")
+    public ResponseEntity<?> modificarImagenProy(@PathVariable Long id, @RequestBody ImgProyDTO imgProyDto){
+        if(!iimgServ.existeImagenProy(id)){
+            return new ResponseEntity<Mensaje>(new Mensaje("El Id No Existe"), HttpStatus.NOT_FOUND);
+        }
+        ImgProy imagen = iimgServ.buscarImagenProy(id);
+
+        imagen.setIdImgProy(imgProyDto.getIdImgProy());
+        imagen.setUrlImg(imgProyDto.getUrlImg());
+        imagen.setProy(imgProyDto.getProy());
+
+        iimgServ.crearImagenProy(imagen);
+
+        return new ResponseEntity<Mensaje>(new Mensaje("Imagen actualizada."), HttpStatus.OK);
     }
     
 }

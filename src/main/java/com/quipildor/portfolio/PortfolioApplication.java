@@ -12,8 +12,8 @@ public class PortfolioApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PortfolioApplication.class, args);
 	}
-
-	/* @Bean
+/*
+	@Bean
 	public WebMvcConfigurer corsConfigurer() {
 		return new WebMvcConfigurer() {
 			@Override
@@ -21,6 +21,7 @@ public class PortfolioApplication {
 				registry.addMapping("/**").allowedOrigins("http://localhost:4200").allowedMethods("*").allowedHeaders("*");
 			}
 		};
-	} */
+	}
+*/
 
 }

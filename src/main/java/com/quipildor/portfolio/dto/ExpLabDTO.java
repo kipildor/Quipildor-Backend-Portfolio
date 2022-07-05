@@ -17,18 +17,34 @@ public class ExpLabDTO {
     private int fechaIng;
     
     private int fechaSalida;
+
+    private String descripcion;
+    
+    private String urlLogo;
     
     // Relaciones
     private Persona perso;
 
     //Constructores
-    public ExpLabDTO(long idExp, String nombreEmp, int fechaIng, int fechaSalida, Persona perso) {
+    /* public ExpLabDTO(long idExp, String nombreEmp, int fechaIng, int fechaSalida, Persona perso) {
         this.idExp = idExp;
         this.nombreEmp = nombreEmp;
         this.fechaIng = fechaIng;
         this.fechaSalida = fechaSalida;
         this.perso = perso;
+    } */
+    
+    public ExpLabDTO(long idExp, String nombreEmp, int fechaIng, int fechaSalida, String descripcion, String urlLogo,
+            Persona perso) {
+        this.idExp = idExp;
+        this.nombreEmp = nombreEmp;
+        this.fechaIng = fechaIng;
+        this.fechaSalida = fechaSalida;
+        this.descripcion = descripcion;
+        this.urlLogo = urlLogo;
+        this.perso = perso;
     }
+
 
     //Getters y Setters
     public long getIdExp() {
@@ -63,6 +79,22 @@ public class ExpLabDTO {
         this.fechaSalida = fechaSalida;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getUrlLogo() {
+        return urlLogo;
+    }
+
+    public void setUrlLogo(String urlLogo) {
+        this.urlLogo = urlLogo;
+    }
+
     public Persona getPerso() {
         return perso;
     }
@@ -74,10 +106,15 @@ public class ExpLabDTO {
     //Método ToString
     @Override
     public String toString() {
+        return "ExpLabDTO [descripcion=" + descripcion + ", fechaIng=" + fechaIng + ", fechaSalida=" + fechaSalida
+                + ", idExp=" + idExp + ", nombreEmp=" + nombreEmp + ", perso=" + perso + ", urlLogo=" + urlLogo + "]";
+    }
+   
+    /* @Override
+    public String toString() {
         return "ExpLabDTO [fechaIng=" + fechaIng + ", fechaSalida=" + fechaSalida + ", idExp=" + idExp + ", nombreEmp="
                 + nombreEmp + ", perso=" + perso.getId() + "]";
     }
-
-    
+     */
     
 }

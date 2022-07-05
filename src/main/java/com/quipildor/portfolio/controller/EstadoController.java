@@ -22,7 +22,7 @@ public class EstadoController {
 
     @Autowired IEstadoService iestadoServ;
 
-    @GetMapping ("")
+    @GetMapping ("/invitado")
     public ResponseEntity<List<Estado>> listarEst() {
 
         List<Estado> listaEstados = iestadoServ.listarEstados();
@@ -30,7 +30,7 @@ public class EstadoController {
         
     }
 
-    @GetMapping ("/{id}")
+    @GetMapping ("/invitado/{id}")
     public ResponseEntity<?> buscarEst(@PathVariable int id) {
         if(!iestadoServ.existeEstado(id)){
             return new ResponseEntity<Mensaje>(new Mensaje("Id No Existe"), HttpStatus.NOT_FOUND);

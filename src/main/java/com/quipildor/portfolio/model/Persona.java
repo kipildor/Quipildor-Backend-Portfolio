@@ -49,19 +49,19 @@ public class Persona {
     private String actividadActual;
 
     // Relaciones
-    @OneToMany(mappedBy = "perso", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "perso")
     private List<AcercaDeMi> listaAcercaDeMi;
 
-    @OneToMany(mappedBy = "perso", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "perso")
     private List<ExpLab> listaExpLab;
 
-    @OneToMany(mappedBy = "perso", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "perso")
     private List<Educacion> listaEducacion;
 
-    @OneToMany(mappedBy = "perso", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "perso")
     private List<Proyecto> listaProyectos;
 
-    @OneToMany(mappedBy = "perso", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "perso")
     private List<Habilidad> listaHabilidades;
     
     // Constructores
