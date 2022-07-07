@@ -71,8 +71,8 @@ public class AcercaDeController {
         acerca.setIdParrafo(acercaDto.getIdParrafo());
         acerca.setParrafo(acercaDto.getParrafo());
         acerca.setPosicion(acercaDto.getPosicion());
-        acerca.setPerso(acercaDto.getPerso());
-
+        //acerca.setPerso(acercaDto.getPerso());
+        //comenté la linea porque al actualizar en el front el id_persona me lo dejaba como NULL
         iacercaServ.crearParrafo(acerca);
 
         return new ResponseEntity<Mensaje>(new Mensaje("Párrafo actualizado."), HttpStatus.OK);
