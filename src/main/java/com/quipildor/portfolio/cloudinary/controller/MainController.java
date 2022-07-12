@@ -33,8 +33,8 @@ public class MainController {
         return new ResponseEntity(list, HttpStatus.OK);
     }
 
-    @PostMapping("/upload")
-    public ResponseEntity<?> upload(@RequestParam MultipartFile multipartFile)throws IOException {
+    @PostMapping("/uploadFotoPerfil")
+    public ResponseEntity<?> uploadFotoPerfil(@RequestParam MultipartFile multipartFile)throws IOException {
         BufferedImage bi = ImageIO.read(multipartFile.getInputStream());
         if(bi == null){
             return new ResponseEntity(new Mensaje("imagen no válida"), HttpStatus.BAD_REQUEST);
@@ -47,6 +47,41 @@ public class MainController {
         //System.out.println(imagen.getImagenUrl());
         imagenService.save(imagen);
         return new ResponseEntity(new Mensaje("imagen subida"), HttpStatus.OK);
+        //return new ResponseEntity<Imagen>(imagen, HttpStatus.OK);
+    }
+
+    @PostMapping("/uploadLogoEmpresa")
+    public ResponseEntity<?> uploadLogoEmpresa(@RequestParam MultipartFile multipartFile)throws IOException {
+        BufferedImage bi = ImageIO.read(multipartFile.getInputStream());
+        if(bi == null){
+            return new ResponseEntity(new Mensaje("imagen no válida"), HttpStatus.BAD_REQUEST);
+        }
+        Map result = cloudinaryService.upload(multipartFile);
+        Imagen imagen =
+                new Imagen((String)result.get("original_filename"),
+                        (String)result.get("url"),
+                        (String)result.get("public_id"));
+        //System.out.println(imagen.getImagenUrl());
+        imagenService.save(imagen);
+        //return new ResponseEntity(new Mensaje("imagen subida"), HttpStatus.OK);
+        return new ResponseEntity(imagen, HttpStatus.OK);
+    }
+
+    @PostMapping("/uploadFotoProyecto")
+    public ResponseEntity<?> uploadFotoProyecto(@RequestParam MultipartFile multipartFile)throws IOException {
+        BufferedImage bi = ImageIO.read(multipartFile.getInputStream());
+        if(bi == null){
+            return new ResponseEntity(new Mensaje("imagen no válida"), HttpStatus.BAD_REQUEST);
+        }
+        Map result = cloudinaryService.upload(multipartFile);
+        Imagen imagen =
+                new Imagen((String)result.get("original_filename"),
+                        (String)result.get("url"),
+                        (String)result.get("public_id"));
+        //System.out.println(imagen.getImagenUrl());
+        imagenService.save(imagen);
+        return new ResponseEntity(new Mensaje("imagen subida"), HttpStatus.OK);
+        //return new ResponseEntity<Imagen>(imagen, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
