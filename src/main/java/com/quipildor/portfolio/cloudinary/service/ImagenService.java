@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.net.URL;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,6 +25,11 @@ public class ImagenService {
         return imagenRepository.findById(id);
     }
 
+    //@Override
+    public Imagen getById(int id){
+        return imagenRepository.findById(id).orElse(null);
+    }
+
     public void save(Imagen imagen){
         imagenRepository.save(imagen);
     }
@@ -34,5 +40,18 @@ public class ImagenService {
 
     public boolean exists(int id){
         return imagenRepository.existsById(id);
+    }
+
+    //@Override
+    /* public Imagen getImgByURL(String url) {
+        return imagenRepository.getByImagenUrl(url);
+    }
+
+    public boolean existsImgByURL(String url){
+        return imagenRepository.existsByImagenUrl(url);
+    } */
+
+    public boolean existsByIDCloudinary(String cloudy_id){
+        return imagenRepository.existsByImagenId(cloudy_id);
     }
 }

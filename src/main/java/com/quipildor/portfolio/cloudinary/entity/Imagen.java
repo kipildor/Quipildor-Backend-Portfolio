@@ -17,6 +17,13 @@ public class Imagen {
     public Imagen() {
     }
 
+    public Imagen(int id, String name, String imagenUrl, String imagenId) {
+        this.id = id;
+        this.name = name;
+        this.imagenUrl = imagenUrl;
+        this.imagenId = imagenId;
+    }
+
     public Imagen(String name, String imagenUrl, String imagenId) {
         this.name = name;
         this.imagenUrl = imagenUrl;

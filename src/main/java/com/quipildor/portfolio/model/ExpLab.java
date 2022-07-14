@@ -37,6 +37,8 @@ public class ExpLab {
     @Column(length = 250)
     private String descripcion;
     
+    private long idUrlLogo;
+
     private String urlLogo;
 
     // Relaciones
@@ -49,13 +51,14 @@ public class ExpLab {
     public ExpLab() {
     }
 
-    public ExpLab(long idExp, String nombreEmp, int fechaIng, int fechaSalida, String descripcion, String urlLogo,
-            Persona perso) {
+    public ExpLab(long idExp, String nombreEmp, int fechaIng, int fechaSalida, String descripcion,
+            long idUrlLogo, String urlLogo, Persona perso) {
         this.idExp = idExp;
         this.nombreEmp = nombreEmp;
         this.fechaIng = fechaIng;
         this.fechaSalida = fechaSalida;
         this.descripcion = descripcion;
+        this.idUrlLogo = idUrlLogo;
         this.urlLogo = urlLogo;
         this.perso = perso;
     }
@@ -110,6 +113,14 @@ public class ExpLab {
         this.descripcion = descripcion;
     }
 
+    public long getIdUrlLogo() {
+        return idUrlLogo;
+    }
+
+    public void setIdUrlLogo(long idUrlLogo) {
+        this.idUrlLogo = idUrlLogo;
+    }
+
     public String getUrlLogo() {
         return urlLogo;
     }
@@ -130,13 +141,9 @@ public class ExpLab {
     @Override
     public String toString() {
         return "ExpLab [descripcion=" + descripcion + ", fechaIng=" + fechaIng + ", fechaSalida=" + fechaSalida
-                + ", idExp=" + idExp + ", nombreEmp=" + nombreEmp + ", perso=" + perso + ", urlLogo=" + urlLogo + "]";
+                + ", idExp=" + idExp + ", nombreEmp=" + nombreEmp + ", perso=" + perso + ", idUrlLogo=" + idUrlLogo
+                + ", urlLogo=" + urlLogo + "]";
     }
 
-    
-    
-    
-    
-    
-    
+        
 }

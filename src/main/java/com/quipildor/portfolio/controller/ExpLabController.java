@@ -46,8 +46,8 @@ public class ExpLabController {
     @PostMapping ("/crear")
     public ResponseEntity<?> altaExperiencia(@RequestBody ExpLabDTO expLabDto){
         ExpLab experiencia = new ExpLab(expLabDto.getIdExp(), expLabDto.getNombreEmp(), expLabDto.getFechaIng(),
-                                expLabDto.getFechaSalida(), expLabDto.getDescripcion(), expLabDto.getUrlLogo(),
-                                expLabDto.getPerso());
+                                expLabDto.getFechaSalida(), expLabDto.getDescripcion(), expLabDto.getIdUrlLogo(),
+                                expLabDto.getUrlLogo(), expLabDto.getPerso());
         iexpServ.crearExpLab(experiencia);
         return new ResponseEntity<Mensaje>(new Mensaje("La experiencia fue agregada."), HttpStatus.OK);
     }
@@ -73,6 +73,7 @@ public class ExpLabController {
         expLab.setFechaIng(expLabDto.getFechaIng());
         expLab.setFechaSalida(expLabDto.getFechaSalida());
         expLab.setDescripcion(expLabDto.getDescripcion());
+        expLab.setIdUrlLogo(expLabDto.getIdUrlLogo());
         expLab.setUrlLogo(expLabDto.getUrlLogo());
         expLab.setPerso(expLabDto.getPerso());
 
