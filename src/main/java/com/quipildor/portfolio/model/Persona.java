@@ -38,7 +38,10 @@ public class Persona {
     @Column(nullable = false, unique = true)
     private String email;
     
+    private long idUrlFoto;
     private String urlFoto;
+
+    private long idUrlBanner;
     private String urlBanner;
     
     @Column(nullable = false)
@@ -69,15 +72,17 @@ public class Persona {
     }
 
     public Persona(long id, /*long doc,*/ String nombre, String apellido, Date fechaNac, String email, 
-                    String urlFoto, String urlBanner, String password, String ubicacion, String titProfesional, 
-                    String actividadActual) {
+                    long idUrlFoto, String urlFoto, long idUrlBanner, String urlBanner, String password, 
+                    String ubicacion, String titProfesional, String actividadActual) {
         this.id = id;
         //this.doc = doc;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNac = fechaNac;
         this.email = email;
+        this.idUrlFoto = idUrlFoto;
         this.urlFoto = urlFoto;
+        this.idUrlBanner = idUrlBanner;
         this.urlBanner = urlBanner;
         this.password = password;
         this.ubicacion = ubicacion;
@@ -126,12 +131,28 @@ public class Persona {
         this.email = email;
     }
 
+    public long getIdUrlFoto() {
+        return idUrlFoto;
+    }
+
+    public void setIdUrlFoto(long idUrlFoto) {
+        this.idUrlFoto = idUrlFoto;
+    }
+
     public String getUrlFoto() {
         return urlFoto;
     }
 
     public void setUrlFoto(String urlFoto) {
         this.urlFoto = urlFoto;
+    }
+
+    public long getIdUrlBanner() {
+        return idUrlBanner;
+    }
+
+    public void setIdUrlBanner(long idUrlBanner) {
+        this.idUrlBanner = idUrlBanner;
     }
 
     public String getUrlBanner() {
@@ -195,8 +216,8 @@ public class Persona {
                 + ", fechaNac=" + fechaNac + ", id=" + id + ", listaAcercaDeMi=" + listaAcercaDeMi + ", listaEducacion="
                 + listaEducacion + ", listaExpLab=" + listaExpLab + ", listaHabilidades=" + listaHabilidades
                 + ", listaProyectos=" + listaProyectos + ", nombre=" + nombre + ", password=" + password
-                + ", titProfesional=" + titProfesional + ", ubicacion=" + ubicacion + ", urlBanner=" + urlBanner
-                + ", urlFoto=" + urlFoto + "]";
+                + ", titProfesional=" + titProfesional + ", ubicacion=" + ubicacion + ", idUrlBanner=" + idUrlBanner
+                + ", urlBanner=" + urlBanner + ", idUrlFoto=" + idUrlFoto + ", urlFoto=" + urlFoto + "]";
     }
     
         

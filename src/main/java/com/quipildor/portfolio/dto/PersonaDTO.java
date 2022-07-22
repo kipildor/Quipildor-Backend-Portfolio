@@ -23,7 +23,11 @@ public class PersonaDTO implements Serializable {
     
     private String email;
     
+    private long idUrlFoto;
+
     private String urlFoto;
+
+    private long idUrlBanner;
 
     private String urlBanner;
     
@@ -38,14 +42,16 @@ public class PersonaDTO implements Serializable {
     //Constructores
     
     public PersonaDTO(long id, String nombre, String apellido, Date fechaNac, String email, 
-                    String urlFoto, String urlBanner, String password, String ubicacion, String titProfesional, 
-                    String actividadActual) {
+                    long idUrlFoto, String urlFoto, long idUrlBanner, String urlBanner, String password, 
+                    String ubicacion, String titProfesional, String actividadActual) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNac = fechaNac;
         this.email = email;
+        this.idUrlFoto = idUrlFoto;
         this.urlFoto = urlFoto;
+        this.idUrlBanner = idUrlBanner;
         this.urlBanner = urlBanner;
         this.password = password;
         this.ubicacion = ubicacion;
@@ -62,7 +68,9 @@ public class PersonaDTO implements Serializable {
         this.apellido = perso.getApellido();
         this.fechaNac = perso.getFechaNac();
         this.email = perso.getEmail();
+        this.idUrlFoto = perso.getIdUrlFoto();
         this.urlFoto = perso.getUrlFoto();
+        this.idUrlBanner = perso.getIdUrlBanner();
         this.urlBanner = perso.getUrlBanner();
         this.password = perso.getPassword();
         this.ubicacion = perso.getUbicacion();
@@ -111,12 +119,28 @@ public class PersonaDTO implements Serializable {
         this.email = email;
     }
 
+    public long getIdUrlFoto() {
+        return idUrlFoto;
+    }
+
+    public void setIdUrlFoto(long idUrlFoto) {
+        this.idUrlFoto = idUrlFoto;
+    }
+
     public String getUrlFoto() {
         return urlFoto;
     }
 
     public void setUrlFoto(String urlFoto) {
         this.urlFoto = urlFoto;
+    }
+
+    public long getIdUrlBanner() {
+        return idUrlBanner;
+    }
+
+    public void setIdUrlBanner(long idUrlBanner) {
+        this.idUrlBanner = idUrlBanner;
     }
 
     public String getUrlBanner() {
@@ -164,8 +188,8 @@ public class PersonaDTO implements Serializable {
     public String toString() {
         return "PersonaDTO [actividadActual=" + actividadActual + ", apellido=" + apellido + ", email=" + email
                 + ", fechaNac=" + fechaNac + ", id=" + id + ", nombre=" + nombre + ", password=" + password
-                + ", titProfesional=" + titProfesional + ", ubicacion=" + ubicacion + ", urlBanner=" + urlBanner
-                + ", urlFoto=" + urlFoto + "]";
+                + ", titProfesional=" + titProfesional + ", ubicacion=" + ubicacion + ", idUrlBanner=" + idUrlBanner
+                + ", urlBanner=" + urlBanner + ", idUrlFoto=" + idUrlFoto + ", urlFoto=" + urlFoto + "]";
     }
 
     

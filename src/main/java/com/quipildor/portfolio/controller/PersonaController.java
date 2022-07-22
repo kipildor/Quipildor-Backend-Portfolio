@@ -47,8 +47,9 @@ public class PersonaController {
     @PostMapping ("crear/persona")
     public ResponseEntity<?> altaPersona(@RequestBody PersonaDTO persoDto){
         Persona perso = new Persona(persoDto.getId(), persoDto.getNombre(), persoDto.getApellido(), persoDto.getFechaNac(),
-                                persoDto.getEmail(), persoDto.getUrlFoto(), persoDto.getUrlBanner(), persoDto.getPassword(),
-                                persoDto.getUbicacion(), persoDto.getTitProfesional(), persoDto.getActividadActual());
+                                persoDto.getEmail(), persoDto.getIdUrlFoto(), persoDto.getUrlFoto(), persoDto.getIdUrlBanner(), 
+                                persoDto.getUrlBanner(), persoDto.getPassword(), persoDto.getUbicacion(), 
+                                persoDto.getTitProfesional(), persoDto.getActividadActual());
         ipersonaServ.crearPersona(perso);
         return new ResponseEntity<Mensaje>(new Mensaje("El usuario fue creado."), HttpStatus.OK);
     }
@@ -75,7 +76,9 @@ public class PersonaController {
         perso.setApellido(persoDto.getApellido());
         perso.setFechaNac(persoDto.getFechaNac());
         perso.setEmail(persoDto.getEmail());
+        perso.setIdUrlFoto(persoDto.getIdUrlFoto());
         perso.setUrlFoto(persoDto.getUrlFoto());
+        perso.setIdUrlBanner(persoDto.getIdUrlBanner());
         perso.setUrlBanner(persoDto.getUrlBanner());
         perso.setPassword(persoDto.getPassword());
         perso.setUbicacion(persoDto.getUbicacion());
@@ -99,7 +102,9 @@ public class PersonaController {
         perso.setApellido(person.getApellido());
         perso.setFechaNac(person.getFechaNac());
         perso.setEmail(person.getEmail());
+        perso.setIdUrlFoto(person.getIdUrlFoto());
         perso.setUrlFoto(person.getUrlFoto());
+        perso.setIdUrlBanner(person.getIdUrlBanner());
         perso.setUrlBanner(person.getUrlBanner());
         perso.setPassword(person.getPassword());
         perso.setUbicacion(person.getUbicacion());
