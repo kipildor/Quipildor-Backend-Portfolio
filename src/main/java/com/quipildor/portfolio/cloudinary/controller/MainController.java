@@ -62,8 +62,8 @@ public class MainController {
                         (String)result.get("public_id"));
         //System.out.println(imagen.getImagenUrl());
         imagenService.save(imagen);
-        return new ResponseEntity(new Mensaje("imagen subida"), HttpStatus.OK);
-        //return new ResponseEntity<Imagen>(imagen, HttpStatus.OK);
+        //return new ResponseEntity(new Mensaje("imagen subida"), HttpStatus.OK);
+        return new ResponseEntity(imagen, HttpStatus.OK);
     }
 
     @PostMapping("/uploadLogoEmpresa")
@@ -96,8 +96,8 @@ public class MainController {
                         (String)result.get("public_id"));
         //System.out.println(imagen.getImagenUrl());
         imagenService.save(imagen);
-        return new ResponseEntity(new Mensaje("imagen subida"), HttpStatus.OK);
-        //return new ResponseEntity<Imagen>(imagen, HttpStatus.OK);
+        //return new ResponseEntity(new Mensaje("imagen subida"), HttpStatus.OK);
+        return new ResponseEntity(imagen, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
