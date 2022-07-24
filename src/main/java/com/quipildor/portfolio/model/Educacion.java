@@ -39,6 +39,8 @@ public class Educacion {
     @Column(nullable = false)
     private String titulo;
     
+    private long idUrlLogo;
+    
     @Column(nullable = true)
     private String urlLogo;
 
@@ -59,13 +61,14 @@ public class Educacion {
     public Educacion() {
     }
 
-    public Educacion(long idEduc, String nombreInstit, int fechaInicio, int fechaFin, String titulo, String urlLogo,
-            Persona perso, Estado estado) {
+    public Educacion(long idEduc, String nombreInstit, int fechaInicio, int fechaFin, String titulo, 
+                    long idUrlLogo, String urlLogo, Persona perso, Estado estado) {
         this.idEduc = idEduc;
         this.nombreInstit = nombreInstit;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.titulo = titulo;
+        this.idUrlLogo = idUrlLogo;
         this.urlLogo = urlLogo;
         this.perso = perso;
         this.estado = estado;
@@ -119,6 +122,14 @@ public class Educacion {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public long getIdUrlLogo() {
+        return idUrlLogo;
+    }
+
+    public void setIdUrlLogo(long idUrlLogo) {
+        this.idUrlLogo = idUrlLogo;
     }
 
     public String getUrlLogo() {

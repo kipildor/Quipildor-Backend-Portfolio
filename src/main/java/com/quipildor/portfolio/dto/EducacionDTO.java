@@ -21,6 +21,8 @@ public class EducacionDTO {
     
     private String titulo;
     
+    private long idUrlLogo;
+
     private String urlLogo;
 
     // Relaciones
@@ -30,12 +32,13 @@ public class EducacionDTO {
 
     //Constructores
     public EducacionDTO(long idEduc, String nombreInstit, int fechaInicio, int fechaFin, String titulo,
-            String urlLogo, Persona perso, Estado estado) {
+            long idUrlLogo, String urlLogo, Persona perso, Estado estado) {
         this.idEduc = idEduc;
         this.nombreInstit = nombreInstit;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
         this.titulo = titulo;
+        this.idUrlLogo = idUrlLogo;
         this.urlLogo = urlLogo;
         this.perso = perso;
         this.estado = estado;
@@ -82,6 +85,14 @@ public class EducacionDTO {
         this.titulo = titulo;
     }
 
+    public long getIdUrlLogo() {
+        return idUrlLogo;
+    }
+
+    public void setIdUrlLogo(long idUrlLogo) {
+        this.idUrlLogo = idUrlLogo;
+    }
+
     public String getUrlLogo() {
         return urlLogo;
     }
@@ -111,7 +122,7 @@ public class EducacionDTO {
     public String toString() {
         return "EducacionDTO [estado=" + estado + ", fechaFin=" + fechaFin + ", fechaInicio=" + fechaInicio
                 + ", idEduc=" + idEduc + ", nombreInstit=" + nombreInstit + ", perso=" + perso + ", titulo=" + titulo
-                + ", urlLogo=" + urlLogo + "]";
+                + ", idUrlLogo=" + idUrlLogo + ", urlLogo=" + urlLogo + "]";
     }
 
     
