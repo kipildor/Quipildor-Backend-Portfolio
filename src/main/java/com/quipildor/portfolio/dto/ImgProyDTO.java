@@ -10,14 +10,17 @@ public class ImgProyDTO {
 
     private long idImgProy;
     
+    private long idUrlImg;
+
     private String urlImg;
 
     // Relaciones
     private Proyecto proy;
 
     //Constructores
-    public ImgProyDTO(long idImgProy, String urlImg, Proyecto proy) {
+    public ImgProyDTO(long idImgProy, long idUrlImg, String urlImg, Proyecto proy) {
         this.idImgProy = idImgProy;
+        this.idUrlImg = idUrlImg;
         this.urlImg = urlImg;
         this.proy = proy;
     }
@@ -29,6 +32,14 @@ public class ImgProyDTO {
 
     public void setIdImgProy(long idImgProy) {
         this.idImgProy = idImgProy;
+    }
+
+    public long getIdUrlImg() {
+        return idUrlImg;
+    }
+
+    public void setIdUrlImg(long idUrlImg) {
+        this.idUrlImg = idUrlImg;
     }
 
     public String getUrlImg() {
@@ -50,7 +61,7 @@ public class ImgProyDTO {
     //Método ToString
     @Override
     public String toString() {
-        return "ImgProyDTO [idImgProy=" + idImgProy + ", proy=" + proy + ", urlImg=" + urlImg + "]";
+        return "ImgProyDTO [idImgProy=" + idImgProy + ", proy=" + proy + ", idUrlImg=" + idUrlImg + ", urlImg=" + urlImg + "]";
     }
 
     

@@ -27,13 +27,19 @@ public class ImgProyController {
 
     @Autowired IImgProyService iimgServ;
 
-    @GetMapping ("")
+    @GetMapping ("/invitado")
     public ResponseEntity<List<ImgProy>> listarImagenesProyecto() {
         List<ImgProy> listaImagenes = iimgServ.listarImagenesProy();
         return new ResponseEntity<List<ImgProy>>(listaImagenes, HttpStatus.OK);
     }
 
-    @GetMapping ("/invitado/{id}")
+    @GetMapping ("/invitado/{idProy}")
+    public ResponseEntity<List<ImgProy>> listarImagenesDeUnProyecto(@PathVariable Long idProy) {
+        List<ImgProy> listaImagenes = iimgServ.listarImagenesProy();//Agregar ID y "Interfaz" y "Servicio"
+        return new ResponseEntity<List<ImgProy>>(listaImagenes, HttpStatus.OK);
+    }
+
+    @GetMapping ("/{id}")
     public ResponseEntity<?> buscarImagenProy(@PathVariable Long id) {
         if(!iimgServ.existeImagenProy(id)){
             return new ResponseEntity<Mensaje>(new Mensaje("Id No Existe"), HttpStatus.NOT_FOUND);
@@ -44,20 +50,11 @@ public class ImgProyController {
 
     @PostMapping ("/crear")
     public ResponseEntity<?> altaImagenProy(@RequestBody ImgProyDTO imgProyDto){
-        ImgProy imagen = new ImgProy(imgProyDto.getIdImgProy(), imgProyDto.getUrlImg(),
+        ImgProy imagen = new ImgProy(imgProyDto.getIdImgProy(), imgProyDto.getIdUrlImg(),imgProyDto.getUrlImg(),
                                 imgProyDto.getProy());
         iimgServ.crearImagenProy(imagen);
         return new ResponseEntity<Mensaje>(new Mensaje("La imagen fue subida."), HttpStatus.OK);
-    }
-
-    @DeleteMapping ("/borrar/{id}")
-    public ResponseEntity<?> borrarImagenProy(@PathVariable Long id){
-        if(!iimgServ.existeImagenProy(id)){
-            return new ResponseEntity<Mensaje>(new Mensaje("El Id No Existe"), HttpStatus.NOT_FOUND);
-        }
-        iimgServ.borrarImagenProy(id);
-        return new ResponseEntity<Mensaje>(new Mensaje("La imagen fue borrada."), HttpStatus.OK);
-    }
+    }    
 
     @PutMapping ("/editar/{id}")
     public ResponseEntity<?> modificarImagenProy(@PathVariable Long id, @RequestBody ImgProyDTO imgProyDto){
@@ -67,12 +64,22 @@ public class ImgProyController {
         ImgProy imagen = iimgServ.buscarImagenProy(id);
 
         imagen.setIdImgProy(imgProyDto.getIdImgProy());
+        imagen.setIdUrlImg(imgProyDto.getIdUrlImg());
         imagen.setUrlImg(imgProyDto.getUrlImg());
         imagen.setProy(imgProyDto.getProy());
 
         iimgServ.crearImagenProy(imagen);
 
         return new ResponseEntity<Mensaje>(new Mensaje("Imagen actualizada."), HttpStatus.OK);
+    }
+
+    @DeleteMapping ("/borrar/{id}")
+    public ResponseEntity<?> borrarImagenProy(@PathVariable Long id){
+        if(!iimgServ.existeImagenProy(id)){
+            return new ResponseEntity<Mensaje>(new Mensaje("El Id No Existe"), HttpStatus.NOT_FOUND);
+        }
+        iimgServ.borrarImagenProy(id);
+        return new ResponseEntity<Mensaje>(new Mensaje("La imagen fue borrada."), HttpStatus.OK);
     }
     
 }

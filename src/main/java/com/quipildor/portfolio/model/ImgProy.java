@@ -24,6 +24,8 @@ public class ImgProy {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idImgProy;
     
+    private long idUrlImg;
+
     @Column(nullable = false)
     private String urlImg;
 
@@ -37,8 +39,9 @@ public class ImgProy {
     public ImgProy() {
     }
 
-    public ImgProy(long idImgProy, String urlImg, Proyecto proy) {
+    public ImgProy(long idImgProy, long idUrlImg, String urlImg, Proyecto proy) {
         this.idImgProy = idImgProy;
+        this.idUrlImg = idUrlImg;
         this.urlImg = urlImg;
         this.proy = proy;
     }
@@ -56,6 +59,14 @@ public class ImgProy {
 
     public void setIdImgProy(long idImgProy) {
         this.idImgProy = idImgProy;
+    }
+
+    public long getIdUrlImg() {
+        return idUrlImg;
+    }
+
+    public void setIdUrlImg(long idUrlImg) {
+        this.idUrlImg = idUrlImg;
     }
 
     public String getUrlImg() {
@@ -77,7 +88,7 @@ public class ImgProy {
     //Método ToString
     @Override
     public String toString() {
-        return "ImgProy [idImgProy=" + idImgProy + ", proy=" + proy + ", urlImg=" + urlImg + "]";
+        return "ImgProy [idImgProy=" + idImgProy + ", proy=" + proy + ", idUrlImg=" + idUrlImg + ", urlImg=" + urlImg + "]";
     }  
 
     
