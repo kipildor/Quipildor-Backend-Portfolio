@@ -46,7 +46,7 @@ public class AcercaDeController {
     @PostMapping ("/crear")
     public ResponseEntity<?> altaParrafo(@RequestBody AcercaDeDTO acercaDto){
         AcercaDeMi acerca = new AcercaDeMi(acercaDto.getIdParrafo(), acercaDto.getParrafo(), acercaDto.getPosicion(),
-                                acercaDto.getPerso());
+                                acercaDto.getPersona_id());
         iacercaServ.crearParrafo(acerca);
         return new ResponseEntity<Mensaje>(new Mensaje("El párrafo fue creado."), HttpStatus.OK);
     }
@@ -71,7 +71,7 @@ public class AcercaDeController {
         acerca.setIdParrafo(acercaDto.getIdParrafo());
         acerca.setParrafo(acercaDto.getParrafo());
         acerca.setPosicion(acercaDto.getPosicion());
-        //acerca.setPerso(acercaDto.getPerso());
+        acerca.setPersona_id(acercaDto.getPersona_id());
         //comenté la linea porque al actualizar en el front el id_persona me lo dejaba como NULL
         iacercaServ.crearParrafo(acerca);
 

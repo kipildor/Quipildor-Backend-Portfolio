@@ -46,13 +46,13 @@ public class Proyecto {
     private String tecnologia;
 
     // Relaciones
-    @ManyToOne(fetch = FetchType.LAZY)
+    /* @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "persona_id")
-    @JsonProperty(access = Access.WRITE_ONLY)
-    private Persona perso;
+    @JsonProperty(access = Access.WRITE_ONLY) */
+    private long persona_id;
     
-    @OneToMany(mappedBy = "proy", cascade = CascadeType.ALL)
-    private List<ImgProy> listaImagenes;
+    /* @OneToMany(mappedBy = "proy", cascade = CascadeType.ALL)
+    private List<ImgProy> listaImagenes; */
     
     
     // Constructores
@@ -71,7 +71,7 @@ public class Proyecto {
     }
 */
     public Proyecto(long idProyecto, String nombreProy, int fechaProy, String descripcion, String urlGithub,
-            String urlPropia, String tecnologia, Persona perso) {
+            String urlPropia, String tecnologia, long persona_id) {
         this.idProyecto = idProyecto;
         this.nombreProy = nombreProy;
         this.fechaProy = fechaProy;
@@ -79,7 +79,7 @@ public class Proyecto {
         this.urlGithub = urlGithub;
         this.urlPropia = urlPropia;
         this.tecnologia = tecnologia;
-        this.perso = perso;
+        this.persona_id = persona_id;
     }
 
     // Getters y Setters
@@ -139,19 +139,19 @@ public class Proyecto {
         this.tecnologia = tecnologia;
     }
 
-    public Persona getPerso() {
-        return perso;
+    public long getPersona_id() {
+        return persona_id;
     }
 
-    public void setPerso(Persona perso) {
-        this.perso = perso;
+    public void setPersona_id(long persona_id) {
+        this.persona_id = persona_id;
     }
 
     //Método ToString
     @Override
     public String toString() {
         return "Proyecto [descripcion=" + descripcion + ", fechaProy=" + fechaProy + ", idProyecto=" + idProyecto
-                + ", listaImagenes=" + listaImagenes + ", nombreProy=" + nombreProy + ", perso=" + perso
+                /* + ", listaImagenes=" + listaImagenes */ + ", nombreProy=" + nombreProy + ", perso=" + persona_id
                 + ", tecnologia=" + tecnologia + ", urlGithub=" + urlGithub + ", urlPropia=" + urlPropia + "]";
     }
 

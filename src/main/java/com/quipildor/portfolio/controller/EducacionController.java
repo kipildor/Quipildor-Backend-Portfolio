@@ -46,7 +46,7 @@ public class EducacionController {
     public ResponseEntity<?> altaEducacion(@RequestBody EducacionDTO educacionDto){
         Educacion educacion = new Educacion(educacionDto.getIdEduc(), educacionDto.getNombreInstit(), educacionDto.getFechaInicio(),
                                             educacionDto.getFechaFin(), educacionDto.getTitulo(), educacionDto.getIdUrlLogo(),
-                                            educacionDto.getUrlLogo(), educacionDto.getPerso(), educacionDto.getEstado());
+                                            educacionDto.getUrlLogo(), educacionDto.getPersona_id(), educacionDto.getEstado_id());
         ieducServ.crearEducacion(educacion);
         return new ResponseEntity<Mensaje>(new Mensaje("La educación fue agregada."), HttpStatus.OK);
     }
@@ -74,8 +74,8 @@ public class EducacionController {
         educacion.setTitulo(educacionDto.getTitulo());
         educacion.setIdUrlLogo(educacionDto.getIdUrlLogo());
         educacion.setUrlLogo(educacionDto.getUrlLogo());
-        educacion.setEstado(educacionDto.getEstado());
-        educacion.setPerso(educacionDto.getPerso());
+        educacion.setEstado_id(educacionDto.getEstado_id());
+        educacion.setPersona_id(educacionDto.getPersona_id());
         
         ieducServ.crearEducacion(educacion);
 

@@ -59,7 +59,7 @@ public class ExpLabController {
     public ResponseEntity<?> altaExperiencia(@RequestBody ExpLabDTO expLabDto){
         ExpLab experiencia = new ExpLab(expLabDto.getIdExp(), expLabDto.getNombreEmp(), expLabDto.getFechaIng(),
                                 expLabDto.getFechaSalida(), expLabDto.getDescripcion(), expLabDto.getIdUrlLogo(),
-                                expLabDto.getUrlLogo(), expLabDto.getPerso());
+                                expLabDto.getUrlLogo(), expLabDto.getPersona_id());
         iexpServ.crearExpLab(experiencia);
         return new ResponseEntity<Mensaje>(new Mensaje("La experiencia fue agregada."), HttpStatus.OK);
     }
@@ -87,7 +87,7 @@ public class ExpLabController {
         expLab.setDescripcion(expLabDto.getDescripcion());
         expLab.setIdUrlLogo(expLabDto.getIdUrlLogo());
         expLab.setUrlLogo(expLabDto.getUrlLogo());
-        expLab.setPerso(expLabDto.getPerso());
+        expLab.setPersona_id(expLabDto.getPersona_id());
 
         iexpServ.crearExpLab(expLab);
 
@@ -115,7 +115,7 @@ public class ExpLabController {
                                 expLabDto.getUrlLogo(), expLabDto.getPerso()); */
         ExpLab experiencia = new ExpLab(expLabDto.getIdExp(), expLabDto.getNombreEmp(), expLabDto.getFechaIng(),
                                 expLabDto.getFechaSalida(), expLabDto.getDescripcion(), expLabDto.getIdUrlLogo(),
-                                imagen.getImagenUrl(), expLabDto.getPerso());
+                                imagen.getImagenUrl(), expLabDto.getPersona_id());
         iexpServ.crearExpLab(experiencia);
         return new ResponseEntity<Mensaje>(new Mensaje("La experiencia fue agregada."), HttpStatus.OK);
     }

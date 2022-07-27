@@ -15,15 +15,15 @@ public class AcercaDeDTO {
     private int posicion;
 
     // **** Relaciones ****
-    //private long persona_id;
-    private Persona perso;
+    private long persona_id;
+    //private Persona perso;
 
     //Constructores
-    public AcercaDeDTO(long idParrafo, String parrafo, int posicion, Persona perso) {
+    public AcercaDeDTO(long idParrafo, String parrafo, int posicion, long persona_id) {
         this.idParrafo = idParrafo;
         this.parrafo = parrafo;
         this.posicion = posicion;
-        this.perso = perso;
+        this.persona_id = persona_id;
     }
 
     //Getters y Setters
@@ -51,18 +51,18 @@ public class AcercaDeDTO {
         this.posicion = posicion;
     }
 
-    public Persona getPerso() {
-        return perso;
+    public long getPersona_id() {
+        return persona_id;
     }
 
-    public void setPerso(Persona perso) {
-        this.perso = perso;
+    public void setPersona_id(long persona_id) {
+        this.persona_id = persona_id;
     }
 
     //Método ToString
     @Override
     public String toString() {
-        return "AcercaDeDTO [idParrafo=" + idParrafo + ", parrafo=" + parrafo + ", perso=" + perso.getId() + ", posicion="
+        return "AcercaDeDTO [idParrafo=" + idParrafo + ", parrafo=" + parrafo + ", perso=" + persona_id + ", posicion="
                 + posicion + "]";
     }
 

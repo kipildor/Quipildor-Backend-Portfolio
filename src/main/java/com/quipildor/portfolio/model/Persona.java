@@ -26,16 +26,17 @@ public class Persona {
     @Column(nullable=false)
     private long doc;
     */
-    @Column(nullable=false)
+    //@Column(nullable=false)
     private String nombre;
     
-    @Column(nullable=false)
+    //@Column(nullable=false)
     private String apellido;
     
     @Temporal(TemporalType.DATE)
     private Date fechaNac;
     
-    @Column(nullable = false, unique = true)
+    //@Column(nullable = false, unique = true)
+    @Column(unique = true)
     private String email;
     
     private long idUrlFoto;
@@ -44,7 +45,7 @@ public class Persona {
     private long idUrlBanner;
     private String urlBanner;
     
-    @Column(nullable = false)
+    //@Column(nullable = false)
     private String password;
     
     private String ubicacion;
@@ -52,7 +53,7 @@ public class Persona {
     private String actividadActual;
 
     // Relaciones
-    @OneToMany(mappedBy = "perso")
+    /* @OneToMany(mappedBy = "perso")
     private List<AcercaDeMi> listaAcercaDeMi;
 
     @OneToMany(mappedBy = "perso")
@@ -65,17 +66,16 @@ public class Persona {
     private List<Proyecto> listaProyectos;
 
     @OneToMany(mappedBy = "perso")
-    private List<Habilidad> listaHabilidades;
+    private List<Habilidad> listaHabilidades; */
     
     // Constructores
     public Persona() {
     }
 
-    public Persona(long id, /*long doc,*/ String nombre, String apellido, Date fechaNac, String email, 
+    public Persona(long id, String nombre, String apellido, Date fechaNac, String email, 
                     long idUrlFoto, String urlFoto, long idUrlBanner, String urlBanner, String password, 
                     String ubicacion, String titProfesional, String actividadActual) {
         this.id = id;
-        //this.doc = doc;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNac = fechaNac;
@@ -213,9 +213,9 @@ public class Persona {
     @Override
     public String toString() {
         return "Persona [actividadActual=" + actividadActual + ", apellido=" + apellido + ", email=" + email
-                + ", fechaNac=" + fechaNac + ", id=" + id + ", listaAcercaDeMi=" + listaAcercaDeMi + ", listaEducacion="
+                + ", fechaNac=" + fechaNac + ", id=" + id + /* ", listaAcercaDeMi=" + listaAcercaDeMi + ", listaEducacion="
                 + listaEducacion + ", listaExpLab=" + listaExpLab + ", listaHabilidades=" + listaHabilidades
-                + ", listaProyectos=" + listaProyectos + ", nombre=" + nombre + ", password=" + password
+                + ", listaProyectos=" + listaProyectos +  */", nombre=" + nombre + ", password=" + password
                 + ", titProfesional=" + titProfesional + ", ubicacion=" + ubicacion + ", idUrlBanner=" + idUrlBanner
                 + ", urlBanner=" + urlBanner + ", idUrlFoto=" + idUrlFoto + ", urlFoto=" + urlFoto + "]";
     }

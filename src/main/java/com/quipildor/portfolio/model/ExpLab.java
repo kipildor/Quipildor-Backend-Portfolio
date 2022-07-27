@@ -42,17 +42,17 @@ public class ExpLab {
     private String urlLogo;
 
     // Relaciones
-    @ManyToOne(fetch = FetchType.LAZY)
+    /* @ManyToOne(fetch = FetchType.LAZY)
     @JsonProperty(access = Access.WRITE_ONLY)
-    @JoinColumn(name = "persona_id")
-    private Persona perso;
+    @JoinColumn(name = "persona_id") */
+    private long persona_id;
 
     // Constructores
     public ExpLab() {
     }
 
     public ExpLab(long idExp, String nombreEmp, int fechaIng, int fechaSalida, String descripcion,
-            long idUrlLogo, String urlLogo, Persona perso) {
+            long idUrlLogo, String urlLogo, long persona_id) {
         this.idExp = idExp;
         this.nombreEmp = nombreEmp;
         this.fechaIng = fechaIng;
@@ -60,7 +60,7 @@ public class ExpLab {
         this.descripcion = descripcion;
         this.idUrlLogo = idUrlLogo;
         this.urlLogo = urlLogo;
-        this.perso = perso;
+        this.persona_id = persona_id;
     }
 /*
     public ExpLab(long idExp, String nombreEmp, Date fechaIng, Date fechaSalida, String descripcion, String urlLogo) {
@@ -129,19 +129,19 @@ public class ExpLab {
         this.urlLogo = urlLogo;
     }
 
-    public Persona getPerso() {
-        return perso;
+    public long getPersona_id() {
+        return persona_id;
     }
 
-    public void setPerso(Persona perso) {
-        this.perso = perso;
+    public void setPersona_id(long persona_id) {
+        this.persona_id = persona_id;
     }
 
     //Método ToString
     @Override
     public String toString() {
         return "ExpLab [descripcion=" + descripcion + ", fechaIng=" + fechaIng + ", fechaSalida=" + fechaSalida
-                + ", idExp=" + idExp + ", nombreEmp=" + nombreEmp + ", perso=" + perso + ", idUrlLogo=" + idUrlLogo
+                + ", idExp=" + idExp + ", nombreEmp=" + nombreEmp + ", perso=" + persona_id + ", idUrlLogo=" + idUrlLogo
                 + ", urlLogo=" + urlLogo + "]";
     }
 

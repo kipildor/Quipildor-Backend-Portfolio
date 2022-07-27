@@ -51,7 +51,7 @@ public class ImgProyController {
     @PostMapping ("/crear")
     public ResponseEntity<?> altaImagenProy(@RequestBody ImgProyDTO imgProyDto){
         ImgProy imagen = new ImgProy(imgProyDto.getIdImgProy(), imgProyDto.getIdUrlImg(),imgProyDto.getUrlImg(),
-                                imgProyDto.getProy());
+                                imgProyDto.getProyecto_id());
         iimgServ.crearImagenProy(imagen);
         return new ResponseEntity<Mensaje>(new Mensaje("La imagen fue subida."), HttpStatus.OK);
     }    
@@ -66,7 +66,7 @@ public class ImgProyController {
         imagen.setIdImgProy(imgProyDto.getIdImgProy());
         imagen.setIdUrlImg(imgProyDto.getIdUrlImg());
         imagen.setUrlImg(imgProyDto.getUrlImg());
-        imagen.setProy(imgProyDto.getProy());
+        imagen.setProyecto_id(imgProyDto.getProyecto_id());
 
         iimgServ.crearImagenProy(imagen);
 

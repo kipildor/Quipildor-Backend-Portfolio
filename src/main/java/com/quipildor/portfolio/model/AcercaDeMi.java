@@ -29,10 +29,10 @@ public class AcercaDeMi {
     private int posicion;
 
     // Relaciones
-    @ManyToOne(fetch = FetchType.LAZY)
+    /* @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "persona_id")
-    @JsonProperty(access = Access.WRITE_ONLY)
-    private Persona perso;
+    @JsonProperty(access = Access.WRITE_ONLY) */
+    private long persona_id;
     
     // Constructores
     public AcercaDeMi() {
@@ -44,11 +44,11 @@ public class AcercaDeMi {
         this.posicion = posicion;
     }
 */
-    public AcercaDeMi(long idParrafo, String parrafo, int posicion, Persona perso) {
+    public AcercaDeMi(long idParrafo, String parrafo, int posicion, long persona_id) {
         this.idParrafo = idParrafo;
         this.parrafo = parrafo;
         this.posicion = posicion;
-        this.perso = perso;
+        this.persona_id = persona_id;
     }
 
     // Getters y Setters
@@ -76,18 +76,18 @@ public class AcercaDeMi {
         this.posicion = posicion;
     }
 
-    public Persona getPerso() {
-        return perso;
+    public long getPersona_id() {
+        return persona_id;
     }
 
-    public void setPerso(Persona perso) {
-        this.perso = perso;
+    public void setPersona_id(long persona_id) {
+        this.persona_id = persona_id;
     }
 
     //Método ToString
     @Override
     public String toString() {
-        return "AcercaDeMi [idParrafo=" + idParrafo + ", parrafo=" + parrafo + ", perso=" + perso + ", posicion="
+        return "AcercaDeMi [idParrafo=" + idParrafo + ", parrafo=" + parrafo + ", perso=" + persona_id + ", posicion="
                 + posicion + "]";
     }
     

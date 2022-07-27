@@ -2,6 +2,7 @@ package com.quipildor.portfolio.controller;
 
 import java.util.List;
 
+import com.quipildor.portfolio.dto.EstadoDTO;
 import com.quipildor.portfolio.dto.Mensaje;
 import com.quipildor.portfolio.interfaz.IEstadoService;
 import com.quipildor.portfolio.model.Estado;
@@ -12,6 +13,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,4 +43,10 @@ public class EstadoController {
         
     }
     
+    @PostMapping ("/invitado/crear")
+    public ResponseEntity<?> altaEstado(@RequestBody EstadoDTO estadoDto){
+        Estado estado = new Estado(estadoDto.getIdEstado(), estadoDto.getDescripcion());
+        iestadoServ.crearEstado(estado);
+        return new ResponseEntity<Mensaje>(new Mensaje("El estado fue agregado."), HttpStatus.OK);
+    }
 }

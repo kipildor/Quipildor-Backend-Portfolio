@@ -46,7 +46,7 @@ public class ProyectoController {
     public ResponseEntity<?> altaProyecto(@RequestBody ProyectoDTO proyectoDto){
         Proyecto proyecto = new Proyecto(proyectoDto.getIdProyecto(), proyectoDto.getNombreProy(), proyectoDto.getFechaProy(),
                                         proyectoDto.getDescripcion(), proyectoDto.getUrlGithub(), proyectoDto.getUrlPropia(),
-                                        proyectoDto.getTecnologia(), proyectoDto.getPerso());
+                                        proyectoDto.getTecnologia(), proyectoDto.getPersona_id());
         iproyServ.crearProyecto(proyecto);
         return new ResponseEntity<Mensaje>(new Mensaje("El proyecto fue creado."), HttpStatus.OK);
     }
@@ -74,7 +74,7 @@ public class ProyectoController {
         proyecto.setUrlGithub(proyectoDto.getUrlGithub());
         proyecto.setUrlPropia(proyectoDto.getUrlPropia());
         proyecto.setTecnologia(proyectoDto.getTecnologia());
-        proyecto.setPerso(proyectoDto.getPerso());
+        proyecto.setPersona_id(proyectoDto.getPersona_id());
 
         iproyServ.crearProyecto(proyecto);
 

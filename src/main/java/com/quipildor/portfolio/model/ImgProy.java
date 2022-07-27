@@ -30,20 +30,20 @@ public class ImgProy {
     private String urlImg;
 
     // Relaciones
-    @ManyToOne(fetch = FetchType.LAZY)
+    /* @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "proyecto_id")
-    @JsonProperty(access = Access.WRITE_ONLY)
-    private Proyecto proy;
+    @JsonProperty(access = Access.WRITE_ONLY) */
+    private long proyecto_id;
     
     // Constructores
     public ImgProy() {
     }
 
-    public ImgProy(long idImgProy, long idUrlImg, String urlImg, Proyecto proy) {
+    public ImgProy(long idImgProy, long idUrlImg, String urlImg, long proyecto_id) {
         this.idImgProy = idImgProy;
         this.idUrlImg = idUrlImg;
         this.urlImg = urlImg;
-        this.proy = proy;
+        this.proyecto_id = proyecto_id;
     }
 /*
     public ImgProy(long idImgProy, String urlImg) {
@@ -77,18 +77,18 @@ public class ImgProy {
         this.urlImg = urlImg;
     }
 
-    public Proyecto getProy() {
-        return proy;
+    public long getProyecto_id() {
+        return proyecto_id;
     }
 
-    public void setProy(Proyecto proy) {
-        this.proy = proy;
+    public void setProyecto_id(long proyecto_id) {
+        this.proyecto_id = proyecto_id;
     }
 
     //Método ToString
     @Override
     public String toString() {
-        return "ImgProy [idImgProy=" + idImgProy + ", proy=" + proy + ", idUrlImg=" + idUrlImg + ", urlImg=" + urlImg + "]";
+        return "ImgProy [idImgProy=" + idImgProy + ", proy=" + proyecto_id + ", idUrlImg=" + idUrlImg + ", urlImg=" + urlImg + "]";
     }  
 
     

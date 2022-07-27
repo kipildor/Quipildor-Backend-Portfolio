@@ -26,13 +26,13 @@ public class EducacionDTO {
     private String urlLogo;
 
     // Relaciones
-    private Persona perso;
+    private long persona_id;
 
-    private Estado estado;
+    private int estado_id;
 
     //Constructores
     public EducacionDTO(long idEduc, String nombreInstit, int fechaInicio, int fechaFin, String titulo,
-            long idUrlLogo, String urlLogo, Persona perso, Estado estado) {
+            long idUrlLogo, String urlLogo, long persona_id, int estado_id) {
         this.idEduc = idEduc;
         this.nombreInstit = nombreInstit;
         this.fechaInicio = fechaInicio;
@@ -40,8 +40,8 @@ public class EducacionDTO {
         this.titulo = titulo;
         this.idUrlLogo = idUrlLogo;
         this.urlLogo = urlLogo;
-        this.perso = perso;
-        this.estado = estado;
+        this.persona_id = persona_id;
+        this.estado_id = estado_id;
     }
 
     //Getters y Setters
@@ -101,27 +101,27 @@ public class EducacionDTO {
         this.urlLogo = urlLogo;
     }
 
-    public Persona getPerso() {
-        return perso;
+    public long getPersona_id() {
+        return persona_id;
     }
 
-    public void setPerso(Persona perso) {
-        this.perso = perso;
+    public void setPersona_id(long persona_id) {
+        this.persona_id = persona_id;
     }
 
-    public Estado getEstado() {
-        return estado;
+    public int getEstado_id() {
+        return estado_id;
     }
 
-    public void setEstado(Estado estado) {
-        this.estado = estado;
+    public void setEstado_id(int estado_id) {
+        this.estado_id = estado_id;
     }
 
     //Método ToString
     @Override
     public String toString() {
-        return "EducacionDTO [estado=" + estado + ", fechaFin=" + fechaFin + ", fechaInicio=" + fechaInicio
-                + ", idEduc=" + idEduc + ", nombreInstit=" + nombreInstit + ", perso=" + perso + ", titulo=" + titulo
+        return "EducacionDTO [estado=" + estado_id + ", fechaFin=" + fechaFin + ", fechaInicio=" + fechaInicio
+                + ", idEduc=" + idEduc + ", nombreInstit=" + nombreInstit + ", perso=" + persona_id + ", titulo=" + titulo
                 + ", idUrlLogo=" + idUrlLogo + ", urlLogo=" + urlLogo + "]";
     }
 

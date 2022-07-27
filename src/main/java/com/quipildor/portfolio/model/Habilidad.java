@@ -29,22 +29,22 @@ public class Habilidad {
     private int posicion;
 
     // Relaciones
-    @ManyToOne(fetch = FetchType.LAZY)
+    /* @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "persona_id")
-    @JsonProperty(access = Access.WRITE_ONLY)
-    private Persona perso;
+    @JsonProperty(access = Access.WRITE_ONLY) */
+    private long persona_id;
     
     
     // Constructores
     public Habilidad() {
     }
 
-    public Habilidad(long idHabilidad, String tecnologia, int porcentaje, int posicion, Persona perso) {
+    public Habilidad(long idHabilidad, String tecnologia, int porcentaje, int posicion, long persona_id) {
         this.idHabilidad = idHabilidad;
         this.tecnologia = tecnologia;
         this.porcentaje = porcentaje;
         this.posicion = posicion;
-        this.perso = perso;
+        this.persona_id = persona_id;
     }
 /*
     public Habilidad(long idHabilidad, String tecnologia, int porcentaje, int posicion) {
@@ -87,18 +87,18 @@ public class Habilidad {
         this.posicion = posicion;
     }
 
-    public Persona getPerso() {
-        return perso;
+    public long getPersona_id() {
+        return persona_id;
     }
 
-    public void setPerso(Persona perso) {
-        this.perso = perso;
+    public void setPersona_id(long persona_id) {
+        this.persona_id = persona_id;
     }
 
     //Método ToString
     @Override
     public String toString() {
-        return "Habilidad [idHabilidad=" + idHabilidad + ", perso=" + perso + ", porcentaje=" + porcentaje
+        return "Habilidad [idHabilidad=" + idHabilidad + ", perso=" + persona_id + ", porcentaje=" + porcentaje
                 + ", posicion=" + posicion + ", tecnologia=" + tecnologia + "]";
     }
     

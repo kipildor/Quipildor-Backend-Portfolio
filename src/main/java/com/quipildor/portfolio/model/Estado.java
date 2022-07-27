@@ -26,8 +26,8 @@ public class Estado {
     private String descripcion;
 
     // Relaciones
-    @OneToMany(mappedBy = "estado", cascade = CascadeType.ALL)
-    private List<Educacion> listaEducacion;
+    /* @OneToMany(mappedBy = "estado", cascade = CascadeType.ALL)
+    private List<Educacion> listaEducacion; */
     
     // Constructores
     public Estado() {

@@ -46,7 +46,7 @@ public class HabilidadController {
     @PostMapping ("/crear")
     public ResponseEntity<?> altaHabilidad(@RequestBody HabilidadDTO habilidadDto){
         Habilidad habilidad = new Habilidad(habilidadDto.getIdHabilidad(), habilidadDto.getTecnologia(), habilidadDto.getPorcentaje(),
-                                            habilidadDto.getPosicion(), habilidadDto.getPerso());
+                                            habilidadDto.getPosicion(), habilidadDto.getPersona_id());
         ihabilidadServ.crearHabilidad(habilidad);
         return new ResponseEntity<Mensaje>(new Mensaje("La habilidad fue creada."), HttpStatus.OK);
     }
@@ -71,7 +71,7 @@ public class HabilidadController {
         habilidad.setTecnologia(habilidadDto.getTecnologia());
         habilidad.setPorcentaje(habilidadDto.getPorcentaje());
         habilidad.setPosicion(habilidadDto.getPosicion());
-        habilidad.setPerso(habilidadDto.getPerso());
+        habilidad.setPersona_id(habilidadDto.getPersona_id());
 
         ihabilidadServ.crearHabilidad(habilidad);
 

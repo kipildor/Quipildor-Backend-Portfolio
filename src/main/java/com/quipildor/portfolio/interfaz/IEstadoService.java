@@ -14,5 +14,8 @@ public interface IEstadoService {
 
     //Comprueba que exista el estado
     public boolean existeEstado(int id);
+
+
+    public void crearEstado(Estado estado);
     
 }
