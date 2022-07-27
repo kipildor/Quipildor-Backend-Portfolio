@@ -35,7 +35,7 @@ public class ImgProyController {
 
     @GetMapping ("/invitado/{idProy}")
     public ResponseEntity<List<ImgProy>> listarImagenesDeUnProyecto(@PathVariable Long idProy) {
-        List<ImgProy> listaImagenes = iimgServ.listarImagenesProy();//Agregar ID y "Interfaz" y "Servicio"
+        List<ImgProy> listaImagenes = iimgServ.listarImagenesDeUnProyecto(idProy);
         return new ResponseEntity<List<ImgProy>>(listaImagenes, HttpStatus.OK);
     }
 

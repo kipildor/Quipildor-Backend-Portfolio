@@ -21,15 +21,19 @@ public class ImpImgProyService implements IImgProyService {
     }
 
     @Override
+    public List<ImgProy> listarImagenesDeUnProyecto(long idProyecto) {
+        List<ImgProy> listaImagenes = iimgProyRepo.listarImagenesDelProyecto(idProyecto);
+        return listaImagenes;
+    }
+
+    @Override
     public void crearImagenProy(ImgProy imagen) {
         iimgProyRepo.save(imagen);
-        
     }
 
     @Override
     public void borrarImagenProy(Long id) {
         iimgProyRepo.deleteById(id);
-        
     }
 
     @Override
@@ -41,7 +45,6 @@ public class ImpImgProyService implements IImgProyService {
     @Override
     public void actualizarImagenProy(ImgProy imagen) {
         iimgProyRepo.save(imagen);
-        
     }
 
     @Override

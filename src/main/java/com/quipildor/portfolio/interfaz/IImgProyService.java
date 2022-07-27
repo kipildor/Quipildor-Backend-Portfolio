@@ -9,6 +9,9 @@ public interface IImgProyService {
     //Trae una lista con las imagenes del proyecto
     public List<ImgProy> listarImagenesProy();
 
+    //Trae una lista con las imagenes de un proyecto determinado
+    public List<ImgProy> listarImagenesDeUnProyecto(long id);
+
     //Crea un registro para una nueva imagen del proyecto
     public void crearImagenProy(ImgProy imagen);
 
