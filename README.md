@@ -43,7 +43,7 @@ Una vez corrido el código que descomentamos en el archivo "CreateRoles.java", d
 
 # Aclaraciones
 * Originalmente la Base de Datos fué creada con todas sus tablas relacionadas, pero debido a distintos inconveniente (Y la fecha de entrega 
-* tan cercana), las relaciones fueron eliminadas (excepto las de JWT) dejando solo sus FK para "relacionarlas".
+tan cercana), las relaciones fueron eliminadas (excepto las de JWT) dejando solo sus FK para "relacionarlas".
 
 ** Al sistema así como le falta un registro para nuevos usuarios (solo se crea uno al comienzo, en el código que descomentamos, y de este es 
 que modificamos los datos en nuestra página) también le faltaría una vinculación entre los usuarios del JWT y las Personas de nuestra página 
@@ -53,7 +53,16 @@ que modificamos los datos en nuestra página) también le faltaría una vinculac
 Elegimos el método POST
 Ponemos la dirección de nuestra Base de Datos con la dirección del método del Controller para crear el nuevo usuario (si trabajaramos 
 localmente, pondríamos algo así en la dirección:
+
              localhost:8080/auth/nuevo
 Y seleccionamos las opciones "Body", dentro de la misma elegimos "raw", y que sea del tipo JSON. Ahora solo nos quedaría modificar el cuerpo 
-de la petición con los datos a enviar:
-{"nombre": "user", "nombreUsuario": "user@gmail.com.ar", "email": "user@gmail.com.ar", "password": "user", "roles": ["user"]}
+de la petición con los datos a enviar, si queremos un usuario del tipo ADMIN colocamos esto:
+
+    {"nombre": "lean", "nombreUsuario": "leandro_1980@live.com.ar", "email": "leandro_1980@live.com.ar", "password": "1234", "roles": ["admin"]}
+
+Si quisiéramos un usuario del tipo "user" seguiríamos el siguiente ejemplo:
+   
+    {"nombre": "user", "nombreUsuario": "user@gmail.com.ar", "email": "user@gmail.com.ar", "password": "user", "roles": ["user"]}
+
+
+
