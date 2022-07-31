@@ -58,7 +58,7 @@ public class CreateRoles implements CommandLineRunner {
 } */
 
 /****  En Postman podemos crear un usuario así:
- * Método POSt ** localhost:8080/auth/nuevo
+ * Método POST ** localhost:8080/auth/nuevo
  * 
  * Seleccionamos Body -> raw
  * 
