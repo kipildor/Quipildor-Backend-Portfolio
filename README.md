@@ -64,5 +64,12 @@ Si quisiéramos un usuario del tipo "user" seguiríamos el siguiente ejemplo:
    
     {"nombre": "user", "nombreUsuario": "user@gmail.com.ar", "email": "user@gmail.com.ar", "password": "user", "roles": ["user"]}
 
+# DER
 
+![DER_Portfolio](https://user-images.githubusercontent.com/2695780/182040838-0b5ff530-ce57-464a-b718-73cf95075bce.jpg)
+El diagrama está desactualizado, entre la entidad Usuario y la entidad Persona debería haber una relación 1:1, y tal vez una herencia entre la entidad Imagen(Cloudinary) y las entidades Persona, Exp_lab, Educación, Img_proy, ya que una vez subida la imagen a Clodinary se graban en Imagen y algunos de esos datos en las otras entidades mencionadas según corresponda.
 
+# Imagen de la BD
+
+![DB_Portfolio_sin_relaciones](https://user-images.githubusercontent.com/2695780/182040865-9efbe7b5-6a96-47d3-967c-5ba6e41f20c0.png)
+Si bien las tablas, en su mayoría, tenian relaciones entre ellas por no conseguir grabar algunos campos FK y la falta de tiempo de encontrar otra solución, dichas relaciones fueron eliminadas, y se mantuvieron los campos que las relacionaban.
